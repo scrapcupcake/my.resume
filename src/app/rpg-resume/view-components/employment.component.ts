@@ -10,8 +10,7 @@ import {Component, Input} from '@angular/core';
                 <main>
                 <h2 class="JobTitle">{{jobTitle}}</h2>
                 <ng-content></ng-content>
-                </main>
-    `
+                </main>`
 })
 export class Employment{
     @Input('job-title') jobTitle: string;
@@ -19,13 +18,4 @@ export class Employment{
     @Input('end-date') endDate: string;
     @Input() employer: string;
     @Input() location: string;
-
-    ngOnInit(){
-        console.log({
-            jobTitle: this.jobTitle, 
-            startDate: this.startDate,
-            endDate: this.endDate,
-            employer: this.employer,
-            location: this.location });
-    }
 }

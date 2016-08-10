@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 
-import {Employment} from './employment.component';
+import {Employment, EmploymentCard, Skill, SkillCard, TitleCard, BiographyCard} from './view-components';
 
 @Component({
     selector: 'rpg-resume',
     styles: [],
-    directives: [Employment],
+    directives: [Employment, EmploymentCard, Skill, SkillCard, TitleCard, BiographyCard],
     template: `
     <title-card 
         name="Hunter Hunnie Thomas"
         email="scrapcupcake@gmail.com"
-        phone="503-516-2831"
-        note="Please use email as the primary countact; phone calls available by appointment" 
-    ></title-card>
+        phone="503-516-2831">
+        Please use email as the primary countact; phone calls available by appointment
+        </title-card>
     
     <bio-card>
     <p>Hello, I’m Hunter Hunnie Thomas, a transgender/non-binary person. I’m currently homeless and trying to get back to my roots of my working career, retail and website development, to get back on my feet.</p>
@@ -122,7 +122,9 @@ import {Employment} from './employment.component';
             <p>Lead the QA and software defect testing team, provide technical leadership and in-depth debugging support to facilitate communication with the development teams.</p>
             <p>Adapted to an ever changing technical startup environment, including expanding responsibilities and working to find new applications of technical skills.</p>
             </employment>
-
+    </employment-card>
+    
+    <employment-card title="Front Desk & Retail Era">
             <employment job-title="System Administrator"
             start-date="2001" end-date="2003" 
             employer="Sasquatch Computer" location="Santa Cruz, CA">
@@ -134,9 +136,7 @@ import {Employment} from './employment.component';
             <p>Researched technical and cost feasibility for possible new services, with full documentation of findings.</p>
             <p>Adapted to an ever changing small business environment. Aided in definition of own job description and responsibilities, as well as the expansion of the latter.</p>
             </employment>
-    </employment-card>
-    
-    <employment-card title="Front Desk & Retail Era">
+
             <employment job-title="Cash Cage Operator & Print Specialist"
             start-date="2001" end-date="2002" 
             employer="Sears" location="Santa Cruz, CA">

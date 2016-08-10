@@ -1,0 +1,6 @@
+{
+  "globalDependencies": {
+    "pixi-spine": "registry:dt/pixi-spine#1.0.4+20160317120654",
+    "pixi.js": "registry:dt/pixi.js#3.0.9+20160705114540"
+  }
+}
