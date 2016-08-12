@@ -4,3 +4,4 @@ export * from "./employment.component";
 export * from "./skill-card.component";
 export * from "./skill.component";
 export * from "./title-card.component";
+export * from './rpg-modal.component';

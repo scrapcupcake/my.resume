@@ -11,7 +11,7 @@ import {Component, Input,
     selector: 'skill',
     template: `<section (click)="toggleShow()">
     <p>{{name}}</p> <div class="skillDisplay">Skill Level: {{level}}</div>
-    <div @showContent="currentAnim" >
+    <div [@showContent]="currentAnim" >
     <ng-content></ng-content>    
     </div>
     </section>

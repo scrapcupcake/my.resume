@@ -9,7 +9,6 @@ import { bootstrap } from '@angular/platform-browser-dynamic';
 import { PLATFORM_PROVIDERS } from './platform/browser';
 import { ENV_PROVIDERS, decorateComponentRef } from './platform/environment';
 
-
 /*
 * App Component
 * our top level component that holds all of our components

@@ -9,12 +9,9 @@ import { HTTP_PROVIDERS } from '@angular/http';
 // Angular 2 Router
 import { provideRouter } from '@angular/router';
 // Angular 2 forms
-import { disableDeprecatedForms, provideForms } from '@angular/forms';
-
 // AngularClass
 import { provideWebpack } from '@angularclass/webpack-toolkit';
 import { providePrefetchIdleCallbacks } from '@angularclass/request-idle-callback';
-
 
 import { routes} from '../app/app.routes';
 
@@ -24,8 +21,6 @@ import { routes} from '../app/app.routes';
 */
 export const APPLICATION_PROVIDERS = [
   // new Angular 2 forms
-  disableDeprecatedForms(),
-  provideForms(),
   provideRouter(routes),
   ...HTTP_PROVIDERS,
 

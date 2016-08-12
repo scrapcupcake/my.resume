@@ -30,8 +30,8 @@ const HIDE : string = "hide";
         }
     `],
     template: `
-        <section class="full-screen" @showFade="animName">
-            <section class="container RpgUiBox" @growIn="animName">
+        <section class="full-screen" [@showFade]="animName">
+            <section class="container RpgUiBox" [@growIn]="animName">
                 <ng-content></ng-content>
             </section>
         </section>
