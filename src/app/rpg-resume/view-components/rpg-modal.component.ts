@@ -15,8 +15,7 @@ const DIALOG_CLASS = 'modal-dialog';
      #modalRoot
      (keydown.esc)="closeOnEscape ? close() : 0"
      [ngClass]="{ in: isOpened, fade: isOpened, out: !isOpened, fadeOut: !isOpened }"
-     [ngStyle]="{ display: isOpened ? 'block' : 'none', zIndex: isOpened ? 10 : -10 }"
-     (click)="closeOnOutsideClick ? close() : 0">
+     [ngStyle]="{ display: isOpened ? 'block' : 'none', zIndex: isOpened ? 10 : -10 }">
     <div [class]="modalClasses" (click)="preventClosing($event)">
         <div class="modal-content" tabindex="0" *ngIf="isOpened">
             <div class="modal-header">
@@ -37,7 +36,7 @@ const DIALOG_CLASS = 'modal-dialog';
 </div>
 `
 })
-export class Modal {
+export class RpgModal {
 
     // -------------------------------------------------------------------------
     // Inputs
@@ -124,7 +123,7 @@ export class Modal {
         document.body.appendChild(this.backdropElement);
         window.setTimeout(() => this.modalRoot.nativeElement.focus(), 0);
         document.body.classList.add(OPEN_CLASS);
-        document.body.classList.remove('model-closed');
+        document.body.classList.remove(CLOSE_CLASS);
     }
 
     close(...args: any[]) {
@@ -134,8 +133,8 @@ export class Modal {
         this.isOpened = false;
         this.onClose.emit(args);
         document.body.removeChild(this.backdropElement);
-        document.body.classList.remove("model-open");
-        document.body.classList.add('model-closed');
+        document.body.classList.remove(OPEN_CLASS);
+        document.body.classList.add(CLOSE_CLASS);
     }
 
     // -------------------------------------------------------------------------
@@ -151,6 +150,7 @@ export class Modal {
         this.backdropElement.classList.add("modal-backdrop");
         this.backdropElement.classList.add("fade");
         this.backdropElement.classList.add("in");
+        this.backdropElement.addEventListener('click', () => {console.log("Clicked Outside"); this.close()});
     }
 
 }

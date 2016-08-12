@@ -3,13 +3,13 @@
     src: url(/assets/fonts/PixelDigivolve.otf);
 }
 
-
 html, body{
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  min-width: 100vw;
   font-family: "BitFont", Arial, Helvetica, sans-serif;
   background-color: black;
 }
@@ -30,7 +30,8 @@ html, body{
   padding: 10px;
   flex: 1;
   overflow-y: scroll;
-  overflow-x: hidden;}
+  overflow-x: hidden;
+}
 
 .RpgUiBox h1, .RpgUiBox h2 {
   text-shadow: 3px 4px 0px black;
@@ -77,96 +78,96 @@ html, body{
 }
 
 
-    .rpg-resume {
-        position: absolute;
-        box-sizing: border-box;
-        height: 100vh;
-        min-height: 100vh;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-    }
+.rpg-resume {
+    position: absolute;
+    box-sizing: border-box;
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
 
-    .split-left-vertical {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        margin: 0;
-        padding: 0;
-        flex-direction: column;
+.split-left-vertical {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    
+    flex: 0 0 66%;
+}
+
+
+.top-left {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    display: flex;
+    align-items: stretch;
+    -webkit-box-align-content: stretch;
+    flex-basis: 50%;
+}
+
+.bottom-left {
+    height: 50%;
+    flex-basis: 50%;
+}
+
+.right {
+    box-sizing: border-box;
+    overflow: scroll;
+    height: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    
+    flex: 0 0 33%;
+}
+
+bio-card {
+    position: relative;
+    overflow: hidden !important;
+}
+
+bio-card:before {
+    content:'';
+    width:100%;
+    height:100%;    
+    position:absolute;
+    left:0;
+    top:0;
+    background:linear-gradient(transparent 45%, #1e5799 85%, transparent 85.1%);
+    pointer-events: none;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+bio-card button {
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    bottom: 0;
+    left: 0;
+    font-family: "BitFont", Arial, Helvetica, sans-serif;
+    font-size: large;
+
+    color: rgb(240,240,240);
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;
+
+    background-color: blue;
+    background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
+    padding: 5px;
+    flex: 1;
         
-        flex: 0 0 66%;
-    }
-
-
-     .top-left {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        flex-direction: row;
-        display: flex;
-        align-items: stretch;
-        -webkit-box-align-content: stretch;
-        flex-basis: 50%;
-    }
-
-    .bottom-left {
-        height: 50%;
-        flex-basis: 50%;
-    }
-
-    .right {
-        box-sizing: border-box;
-        overflow: scroll;
-        height: 100%;
-        display: flex;
-        margin: 0;
-        padding: 0;
-        flex-direction: column;
-        
-        flex: 0 0 33%;
-    }
-
-    bio-card {
-        position: relative;
-        overflow: hidden !important;
-    }
-
-    bio-card:before {
-        content:'';
-        width:100%;
-        height:100%;    
-        position:absolute;
-        left:0;
-        top:0;
-        background:linear-gradient(transparent 45%, #1e5799 85%, transparent 85.1%);
-        pointer-events: none;
-        margin-left: 3px;
-        margin-right: 3px;
-    }
-
-    bio-card button {
-        position: absolute;
-        width: 100%;
-        height: 15%;
-        bottom: 0;
-        left: 0;
-        font-family: "BitFont", Arial, Helvetica, sans-serif;
-        font-size: large;
-
-        color: rgb(240,240,240);
-        border-radius: 10px;
-        box-sizing: border-box;
-        box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;
-
-        background-color: blue;
-        background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
-        padding: 5px;
-        flex: 1;
-            
-    }
+}

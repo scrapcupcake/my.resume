@@ -1,6 +1,7 @@
 import {Directive, Component, AfterContentInit, ViewChild, ContentChildren, QueryList, ElementRef, Renderer} from '@angular/core';
 //import {FullScreenTextPanel} from './full-screen-text-panel.component';
-import {Modal} from 'ng2-modal';
+//import {Modal} from 'ng2-modal';
+import {RpgModal} from './rpg-modal.component';
 
 @Directive({
     selector: 'p'
@@ -19,13 +20,13 @@ class Paragraph{
 
 @Component({
     selector: 'bio-card',
-    directives: [Modal, Paragraph],
+    directives: [RpgModal, Paragraph],
     template: `
     <button (click)="bioModal.open()">Read More</button>
     <h2>Biography</h2>
     <ng-content></ng-content>
     
-    <modal class="RpgUiBox" closeOnEscape="true" closeOnOutsideClick="true" #bioModal>
+    <rpg-modal class="RpgUiBox" closeOnEscape="true" closeOnOutsideClick="true" #bioModal>
         <modal-header>
             Biography
         </modal-header>
@@ -37,7 +38,7 @@ class Paragraph{
         <modal-footer>
             <button (click)="bioModal.close()">Close</button>
         </modal-footer>
-    </modal>
+    </rpg-modal>
     `
 })
 export class BiographyCard implements AfterContentInit{
