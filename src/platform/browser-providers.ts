@@ -3,7 +3,7 @@
  */
 
 // Angular 2
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 // Angular 2 Http
 import { HTTP_PROVIDERS } from '@angular/http';
 // Angular 2 Router
@@ -13,18 +13,15 @@ import { provideRouter } from '@angular/router';
 import { provideWebpack } from '@angularclass/webpack-toolkit';
 import { providePrefetchIdleCallbacks } from '@angularclass/request-idle-callback';
 
-import { routes} from '../app/app.routes';
-
 /*
 * Application Providers/Directives/Pipes
 * providers/directives/pipes that only live in our browser environment
 */
 export const APPLICATION_PROVIDERS = [
   // new Angular 2 forms
-  provideRouter(routes),
   ...HTTP_PROVIDERS,
 
-  { provide: LocationStrategy, useClass: HashLocationStrategy }
+  { provide: LocationStrategy, useClass: PathLocationStrategy }
 ];
 
 export const PROVIDERS = [
