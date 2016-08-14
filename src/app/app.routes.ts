@@ -4,5 +4,4 @@ import { RpgResume } from './rpg-resume';
 
 export const routes: RouterConfig = [
   { path: '',      component:  RpgResume },
-
 ];

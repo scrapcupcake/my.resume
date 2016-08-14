@@ -7,14 +7,26 @@ import {Component, Input,
   keyframes
 } from '@angular/core';
 
+import {RpgModal} from './rpg-modal.component';
+
 @Component({
+    directives: [RpgModal],
     selector: 'skill',
-    template: `<section (click)="toggleShow()">
-    <p>{{name}}</p> <div class="skillDisplay">Skill Level: {{level}}</div>
-    <div [@showContent]="currentAnim" >
-    <ng-content></ng-content>    
-    </div>
-    </section>
+    template: `
+    <section (click)="skillModal.open()" class="skillContainer">
+      <div class="skillDisplay">{{name}}</div> <div class="levelDisplay"><img [src]="'../../../assets/img/skills' + level + '.png'"/></div>
+      
+   <rpg-modal closeOnEscape="true" closeOnOutsideClick="true" #skillModal>
+        <modal-header>
+            {{name}}
+        </modal-header>
+        <modal-content>
+          <ng-content></ng-content>
+        </modal-content>
+        <modal-footer>
+            <button (click)="skillModal.close()">Close</button>
+        </modal-footer>
+    </rpg-modal>
 
     `,
     animations: [

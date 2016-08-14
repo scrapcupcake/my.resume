@@ -20,13 +20,13 @@ class Paragraph{
 
 @Component({
     selector: 'bio-card',
-    directives: [RpgModal, Paragraph],
+    directives: [RpgModal,Paragraph],
     template: `
     <button (click)="bioModal.open()">Read More</button>
     <h2>Biography</h2>
     <ng-content></ng-content>
     
-    <rpg-modal class="RpgUiBox" closeOnEscape="true" closeOnOutsideClick="true" #bioModal>
+    <rpg-modal closeOnEscape="true" closeOnOutsideClick="true" #bioModal>
         <modal-header>
             Biography
         </modal-header>
@@ -45,8 +45,6 @@ export class BiographyCard implements AfterContentInit{
     @ContentChildren(Paragraph) children : QueryList<Paragraph>;
 
     ngAfterContentInit(){
-        console.log(this.children);
-        this.children.changes.subscribe((items) => {console.log("I got: ", items);})
     }
 
     
