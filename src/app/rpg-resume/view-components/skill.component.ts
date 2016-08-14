@@ -13,17 +13,14 @@ import {Component, Input,
     <section (click)="skillModal.open()" class="skillContainer">
       <div class="skillDisplay">{{name}}</div> <div class="levelDisplay"><img [src]="'../../../assets/img/skills' + level + '.png'"/></div>
       
-   <rpg-modal closeOnEscape="true" closeOnOutsideClick="true" #skillModal>
-        <modal-header>
+   <rpg-details #skillModal>
+        <title>
             {{name}}
-        </modal-header>
-        <modal-content>
+        </title>
+        <detail-body>
           <ng-content></ng-content>
-        </modal-content>
-        <modal-footer>
-            <button (click)="skillModal.close()">Close</button>
-        </modal-footer>
-    </rpg-modal>
+        </detail-body>
+    </rpg-details>
 
     `,
     animations: [

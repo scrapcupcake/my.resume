@@ -25,19 +25,16 @@ class Paragraph{
     <h2>Biography</h2>
     <ng-content></ng-content>
     
-    <rpg-modal closeOnEscape="true" closeOnOutsideClick="true" #bioModal>
-        <modal-header>
+    <rpg-details #bioModal>
+        <title>
             Biography
-        </modal-header>
-        <modal-content>
+        </title>
+        <detail-body>
             <p *ngFor="let child of children">
                 {{child.content}}
             </p>
-        </modal-content>
-        <modal-footer>
-            <button (click)="bioModal.close()">Close</button>
-        </modal-footer>
-    </rpg-modal>
+        </detail-body>
+    </rpg-details>
     `
 })
 export class BiographyCard implements AfterContentInit{

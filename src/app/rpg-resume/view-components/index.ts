@@ -15,8 +15,8 @@ import {BrowserModule} from "@angular/platform-browser";
 
 @NgModule({
     imports:[RpgModals, CommonModule, BrowserModule],
-    declarations: [BiographyCard, Employment, Employment, Skill, SkillCard, TitleCard, SkillKey, EmploymentCardSet],
-    exports: [RpgModals, CommonModule, BrowserModule, BiographyCard, Employment, Employment, Skill, SkillCard, TitleCard, SkillKey, EmploymentCardSet]
+    declarations: [BiographyCard, Employment, EmploymentCard, Skill, SkillCard, TitleCard, SkillKey, EmploymentCardSet],
+    exports: [RpgModals, CommonModule, BrowserModule, BiographyCard, Employment, EmploymentCard, Skill, SkillCard, TitleCard, SkillKey, EmploymentCardSet]
 })
 export class ViewComponents{
 

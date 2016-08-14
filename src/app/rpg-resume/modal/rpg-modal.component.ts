@@ -8,6 +8,7 @@ const DIALOG_CLASS = 'modal-dialog';
 
 @Component({
     selector: "rpg-modal",
+    styleUrls:['./rpg-details.css'],
     template: `
 <div class="modal" 
      tabindex="-1"

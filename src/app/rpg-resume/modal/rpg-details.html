@@ -1,10 +1,10 @@
-<rpg-modal closeOnEscape="true" closeOnOutsideClick="true" #modal>
+<rpg-modal modalClass="RpgUiBox" closeOnEscape="true" closeOnOutsideClick="true" #modal>
     <modal-header>
         <ng-content select="title"></ng-content>
     </modal-header>
-    <modal-body>
+    <modal-content>
         <ng-content select="detail-body"></ng-content>
-    </modal-body>
+    </modal-content>
     <modal-footer>
         <button (click)="modal.close()">Close</button>
     </modal-footer>
