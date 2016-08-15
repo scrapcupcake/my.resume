@@ -26,7 +26,7 @@ class Paragraph{
     <h2>Biography</h2>
     <ng-content></ng-content>
     
-    <rpg-modal closeOnEscape="true" closeOnOutsideClick="true" #bioModal>
+    <rpg-modal modalClass="RpgUiBox" closeOnEscape="true" closeOnOutsideClick="true" #bioModal>
         <modal-header>
             Biography
         </modal-header>

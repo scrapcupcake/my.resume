@@ -6,3 +6,4 @@ export * from "./skill.component";
 export * from "./title-card.component";
 export * from './skill-key.component';
 export * from './employment-cardset.component';
+export * from './rpg-modal.component';
