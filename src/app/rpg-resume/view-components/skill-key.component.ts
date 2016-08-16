@@ -5,7 +5,7 @@ import {Component, Input} from '@angular/core';
     selector: 'skill-key',
     template: `
     <section class="RpgUiBox">
-    <img src="../../../assets/img/skillskey.png"/>
+    <img src="assets/img/skillskey.png"/>
     </section>
     `
 })
