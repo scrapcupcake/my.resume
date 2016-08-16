@@ -8,31 +8,26 @@ webpackJsonpac__name_([2],{
 	/*
 	 * Providers provided by Angular
 	 */
-	const platform_browser_dynamic_1 = __webpack_require__(333);
+	var platform_browser_dynamic_1 = __webpack_require__(333);
 	/*
 	* Platform and Environment
 	* our providers/directives/pipes
 	*/
-	const browser_1 = __webpack_require__(523);
-	const environment_1 = __webpack_require__(524);
+	var browser_1 = __webpack_require__(523);
+	var environment_1 = __webpack_require__(524);
 	/*
 	* App Component
 	* our top level component that holds all of our components
 	*/
-	const app_1 = __webpack_require__(512);
+	var app_1 = __webpack_require__(512);
 	/*
 	 * Bootstrap our Angular app with a top level component `App` and inject
 	 * our Services and Providers into Angular's dependency injection
 	 */
 	function main(initialHmrState) {
-	    return platform_browser_dynamic_1.bootstrap(app_1.App, [
-	        // To add more vendor providers please look in the platform/ folder
-	        ...browser_1.PLATFORM_PROVIDERS,
-	        ...environment_1.ENV_PROVIDERS,
-	        ...app_1.APP_PROVIDERS,
-	    ])
+	    return platform_browser_dynamic_1.bootstrap(app_1.App, browser_1.PLATFORM_PROVIDERS.concat(environment_1.ENV_PROVIDERS, app_1.APP_PROVIDERS))
 	        .then(environment_1.decorateComponentRef)
-	        .catch(err => console.error(err));
+	        .catch(function (err) { return console.error(err); });
 	}
 	exports.main = main;
 	/*
@@ -47,12 +42,12 @@ webpackJsonpac__name_([2],{
 	 */
 	if (false) {
 	    // activate hot module reload
-	    let ngHmr = require('angular2-hmr');
+	    var ngHmr = require('angular2-hmr');
 	    ngHmr.hotModuleReplacement(main, module);
 	}
 	else {
 	    // bootstrap when document is ready
-	    document.addEventListener('DOMContentLoaded', () => main());
+	    document.addEventListener('DOMContentLoaded', function () { return main(); });
 	}
 	
 
@@ -62,18 +57,18 @@ webpackJsonpac__name_([2],{
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	const core_1 = __webpack_require__(1);
-	const core_2 = __webpack_require__(1);
+	var core_1 = __webpack_require__(1);
+	var core_2 = __webpack_require__(1);
 	// Borrowed with open source permission from 
 	//https://github.com/pleerock/ng2-modal/blob/master/src/Modal.ts
-	const OPEN_CLASS = 'modal-open';
-	const CLOSE_CLASS = 'modal-close';
-	const DIALOG_CLASS = 'modal-dialog';
-	let RpgModal = class RpgModal {
+	var OPEN_CLASS = 'modal-open';
+	var CLOSE_CLASS = 'modal-close';
+	var DIALOG_CLASS = 'modal-dialog';
+	var RpgModal = (function () {
 	    // -------------------------------------------------------------------------
 	    // Constructor
 	    // -------------------------------------------------------------------------
-	    constructor() {
+	    function RpgModal() {
 	        this.closeOnEscape = true;
 	        this.closeOnOutsideClick = true;
 	        this.hideCloseButton = false;
@@ -93,24 +88,33 @@ webpackJsonpac__name_([2],{
 	    // -------------------------------------------------------------------------
 	    // Lifecycle Methods
 	    // -------------------------------------------------------------------------
-	    ngOnDestroy() {
+	    RpgModal.prototype.ngOnDestroy = function () {
 	        if (this.backdropElement && this.backdropElement.parentNode === document.body)
 	            document.body.removeChild(this.backdropElement);
-	    }
+	    };
 	    // -------------------------------------------------------------------------
 	    // Public Methods
 	    // -------------------------------------------------------------------------
-	    open(...args) {
+	    RpgModal.prototype.open = function () {
+	        var _this = this;
+	        var args = [];
+	        for (var _i = 0; _i < arguments.length; _i++) {
+	            args[_i - 0] = arguments[_i];
+	        }
 	        if (this.isOpened)
 	            return;
 	        this.isOpened = true;
 	        this.onOpen.emit(args);
 	        document.body.appendChild(this.backdropElement);
-	        window.setTimeout(() => this.modalRoot.nativeElement.focus(), 0);
+	        window.setTimeout(function () { return _this.modalRoot.nativeElement.focus(); }, 0);
 	        document.body.classList.add(OPEN_CLASS);
 	        document.body.classList.remove(CLOSE_CLASS);
-	    }
-	    close(...args) {
+	    };
+	    RpgModal.prototype.close = function () {
+	        var args = [];
+	        for (var _i = 0; _i < arguments.length; _i++) {
+	            args[_i - 0] = arguments[_i];
+	        }
 	        if (!this.isOpened)
 	            return;
 	        this.isOpened = false;
@@ -118,122 +122,98 @@ webpackJsonpac__name_([2],{
 	        document.body.removeChild(this.backdropElement);
 	        document.body.classList.remove(OPEN_CLASS);
 	        document.body.classList.add(CLOSE_CLASS);
-	    }
+	    };
 	    // -------------------------------------------------------------------------
 	    // Private Methods
 	    // -------------------------------------------------------------------------
-	    preventClosing(event) {
+	    RpgModal.prototype.preventClosing = function (event) {
 	        event.stopPropagation();
-	    }
-	    createBackDrop() {
+	    };
+	    RpgModal.prototype.createBackDrop = function () {
+	        var _this = this;
 	        this.backdropElement = document.createElement("div");
 	        this.backdropElement.classList.add("modal-backdrop");
 	        this.backdropElement.classList.add("fade");
 	        this.backdropElement.classList.add("in");
-	        this.backdropElement.addEventListener('click', () => { console.log("Clicked Outside"); this.close(); });
-	    }
-	};
-	__decorate([
-	    core_1.Input(), 
-	    __metadata('design:type', String)
-	], RpgModal.prototype, "modalClass", void 0);
-	__decorate([
-	    core_1.Input(), 
-	    __metadata('design:type', Boolean)
-	], RpgModal.prototype, "closeOnEscape", void 0);
-	__decorate([
-	    core_1.Input(), 
-	    __metadata('design:type', Boolean)
-	], RpgModal.prototype, "closeOnOutsideClick", void 0);
-	__decorate([
-	    core_1.Input(), 
-	    __metadata('design:type', String)
-	], RpgModal.prototype, "title", void 0);
-	__decorate([
-	    core_1.Input(), 
-	    __metadata('design:type', Object)
-	], RpgModal.prototype, "hideCloseButton", void 0);
-	__decorate([
-	    core_1.Input(), 
-	    __metadata('design:type', String)
-	], RpgModal.prototype, "cancelButtonLabel", void 0);
-	__decorate([
-	    core_1.Input(), 
-	    __metadata('design:type', String)
-	], RpgModal.prototype, "submitButtonLabel", void 0);
-	__decorate([
-	    core_1.Output(), 
-	    __metadata('design:type', Object)
-	], RpgModal.prototype, "onOpen", void 0);
-	__decorate([
-	    core_1.Output(), 
-	    __metadata('design:type', Object)
-	], RpgModal.prototype, "onClose", void 0);
-	__decorate([
-	    core_1.Output(), 
-	    __metadata('design:type', Object)
-	], RpgModal.prototype, "onSubmit", void 0);
-	__decorate([
-	    core_1.ViewChild("modalRoot"), 
-	    __metadata('design:type', (typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object)
-	], RpgModal.prototype, "modalRoot", void 0);
-	RpgModal = __decorate([
-	    core_1.Component({
-	        animations: [
-	            core_2.trigger('openClose', [
-	                core_2.state('open', core_2.style({ transform: 'translateX(0), scale(1)', display: 'block' })),
-	                core_2.state('closed', core_2.style({ display: 'none' })),
-	                core_2.transition('* => open', [
-	                    core_2.animate(700, core_2.keyframes([
-	                        core_2.style({ opacity: 0, transform: 'translateX(-100%)', display: 'block', offset: 0 }),
-	                        core_2.style({ opacity: 1, transform: 'translateX(15px)', offset: 0.3 }),
-	                        core_2.style({ opacity: 1, transform: 'translateX(0)', offset: 1.0 })
-	                    ]))
-	                ]),
-	                core_2.transition('* => closed', [
-	                    core_2.animate(700, core_2.keyframes([
-	                        core_2.style({ opacity: 1, transform: 'translateX(0)', offset: 0 }),
-	                        core_2.style({ opacity: 1, transform: 'translateX(-15px)', offset: 0.7 }),
-	                        core_2.style({ opacity: 0, transform: 'translateX(100%)', offset: 0.99 }),
-	                        core_2.style({ offset: 1, display: 'none' })
-	                    ]))
+	        this.backdropElement.addEventListener('click', function () { console.log("Clicked Outside"); _this.close(); });
+	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], RpgModal.prototype, "modalClass", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], RpgModal.prototype, "closeOnEscape", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Boolean)
+	    ], RpgModal.prototype, "closeOnOutsideClick", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], RpgModal.prototype, "title", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], RpgModal.prototype, "hideCloseButton", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], RpgModal.prototype, "cancelButtonLabel", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], RpgModal.prototype, "submitButtonLabel", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], RpgModal.prototype, "onOpen", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], RpgModal.prototype, "onClose", void 0);
+	    __decorate([
+	        core_1.Output(), 
+	        __metadata('design:type', Object)
+	    ], RpgModal.prototype, "onSubmit", void 0);
+	    __decorate([
+	        core_1.ViewChild("modalRoot"), 
+	        __metadata('design:type', (typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object)
+	    ], RpgModal.prototype, "modalRoot", void 0);
+	    RpgModal = __decorate([
+	        core_1.Component({
+	            animations: [
+	                core_2.trigger('openClose', [
+	                    core_2.state('open', core_2.style({ transform: 'translateX(0), scale(1)', display: 'block' })),
+	                    core_2.state('closed', core_2.style({ display: 'none' })),
+	                    core_2.transition('* => open', [
+	                        core_2.animate(700, core_2.keyframes([
+	                            core_2.style({ opacity: 0, transform: 'translateX(-100%)', display: 'block', offset: 0 }),
+	                            core_2.style({ opacity: 1, transform: 'translateX(15px)', offset: 0.3 }),
+	                            core_2.style({ opacity: 1, transform: 'translateX(0)', offset: 1.0 })
+	                        ]))
+	                    ]),
+	                    core_2.transition('* => closed', [
+	                        core_2.animate(700, core_2.keyframes([
+	                            core_2.style({ opacity: 1, transform: 'translateX(0)', offset: 0 }),
+	                            core_2.style({ opacity: 1, transform: 'translateX(-15px)', offset: 0.7 }),
+	                            core_2.style({ opacity: 0, transform: 'translateX(100%)', offset: 0.99 }),
+	                            core_2.style({ offset: 1, display: 'none' })
+	                        ]))
+	                    ])
 	                ])
-	            ])
-	        ],
-	        selector: "rpg-modal",
-	        template: `
-	<div [@openClose]="isOpened ? 'open' : 'closed'" class="modal" 
-	     tabindex="-1"
-	     role="dialog"
-	     #modalRoot
-	     (keydown.esc)="closeOnEscape ? close() : 0"
-	     [ngClass]="{ in: isOpened, fade: isOpened, out: !isOpened, fadeOut: !isOpened }"
-	     [ngStyle]="{ zIndex: isOpened ? 10 : -10 }">
-	    <div [class]="modalClasses" (click)="preventClosing($event)">
-	        <div class="modal-content" tabindex="0" *ngIf="isOpened">
-	            <div class="modal-header">
-	                <button *ngIf="!hideCloseButton" type="button" class="close" data-dismiss="modal" [attr.aria-label]="cancelButtonLabel || 'Close'" (click)="close()"><span aria-hidden="true">&times;</span></button>
-	                <h4 class="modal-title" *ngIf="title">{{ title }}</h4>
-	                <ng-content select="modal-header"></ng-content>
-	            </div>
-	            <div class="modal-body">
-	                <ng-content select="modal-content"></ng-content>
-	            </div>
-	            <div class="modal-footer">
-	                <ng-content select="modal-footer"></ng-content>
-	                <button *ngIf="cancelButtonLabel" type="button" class="btn btn-default" data-dismiss="modal" (click)="close()">{{ cancelButtonLabel }}</button>
-	                <button *ngIf="submitButtonLabel" type="button" class="btn btn-primary" (click)="onSubmit.emit(undefined)">{{ submitButtonLabel }}</button>
-	            </div>
-	        </div>
-	    </div>
-	</div>
-	`
-	    }), 
-	    __metadata('design:paramtypes', [])
-	], RpgModal);
+	            ],
+	            selector: "rpg-modal",
+	            template: "\n<div [@openClose]=\"isOpened ? 'open' : 'closed'\" class=\"modal\" \n     tabindex=\"-1\"\n     role=\"dialog\"\n     #modalRoot\n     (keydown.esc)=\"closeOnEscape ? close() : 0\"\n     [ngClass]=\"{ in: isOpened, fade: isOpened, out: !isOpened, fadeOut: !isOpened }\"\n     [ngStyle]=\"{ zIndex: isOpened ? 10 : -10 }\">\n    <div [class]=\"modalClasses\" (click)=\"preventClosing($event)\">\n        <div class=\"modal-content\" tabindex=\"0\" *ngIf=\"isOpened\">\n            <div class=\"modal-header\">\n                <button *ngIf=\"!hideCloseButton\" type=\"button\" class=\"close\" data-dismiss=\"modal\" [attr.aria-label]=\"cancelButtonLabel || 'Close'\" (click)=\"close()\"><span aria-hidden=\"true\">&times;</span></button>\n                <h4 class=\"modal-title\" *ngIf=\"title\">{{ title }}</h4>\n                <ng-content select=\"modal-header\"></ng-content>\n            </div>\n            <div class=\"modal-body\">\n                <ng-content select=\"modal-content\"></ng-content>\n            </div>\n            <div class=\"modal-footer\">\n                <ng-content select=\"modal-footer\"></ng-content>\n                <button *ngIf=\"cancelButtonLabel\" type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\" (click)=\"close()\">{{ cancelButtonLabel }}</button>\n                <button *ngIf=\"submitButtonLabel\" type=\"button\" class=\"btn btn-primary\" (click)=\"onSubmit.emit(undefined)\">{{ submitButtonLabel }}</button>\n            </div>\n        </div>\n    </div>\n</div>\n"
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], RpgModal);
+	    return RpgModal;
+	    var _a;
+	}());
 	exports.RpgModal = RpgModal;
-	var _a;
-
+	
 
 /***/ },
 
@@ -241,7 +221,7 @@ webpackJsonpac__name_([2],{
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	const rpg_resume_1 = __webpack_require__(513);
+	var rpg_resume_1 = __webpack_require__(513);
 	exports.routes = [
 	    { path: '', component: rpg_resume_1.RpgResume },
 	];
@@ -253,46 +233,29 @@ webpackJsonpac__name_([2],{
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	const core_1 = __webpack_require__(1);
-	const rpg_modal_component_1 = __webpack_require__(102);
-	let EmploymentCard = class EmploymentCard {
-	};
-	__decorate([
-	    core_1.Input(), 
-	    __metadata('design:type', String)
-	], EmploymentCard.prototype, "title", void 0);
-	__decorate([
-	    core_1.Input(), 
-	    __metadata('design:type', String)
-	], EmploymentCard.prototype, "subtitle", void 0);
-	EmploymentCard = __decorate([
-	    core_1.Component({
-	        directives: [rpg_modal_component_1.RpgModal],
-	        selector: 'employment-card',
-	        template: `
-	      
-	   <rpg-modal hideCloseButton='true' modalClass="RpgUiBox" closeOnEscape="true" closeOnOutsideClick="true" #employmentDialog>
-	        <modal-header>
-	            <h1>{{title}}</h1>
-	            <h2>{{subtitle}}</h2>
-	        </modal-header>
-	        <modal-content>
-	          <ng-content></ng-content>
-	        </modal-content>
-	        <modal-footer>
-	            <button (click)="employmentDialog.close()">Close</button>
-	        </modal-footer>
-	    </rpg-modal>
-
-	    <button class="employment-nav" (click)='employmentDialog.open()'>
-	        <h1>{{title}}</h1>
-	        <h2>{{subtitle}}</h2>
-	    </button>
-	    
-	    `
-	    }), 
-	    __metadata('design:paramtypes', [])
-	], EmploymentCard);
+	var core_1 = __webpack_require__(1);
+	var rpg_modal_component_1 = __webpack_require__(102);
+	var EmploymentCard = (function () {
+	    function EmploymentCard() {
+	    }
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], EmploymentCard.prototype, "title", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], EmploymentCard.prototype, "subtitle", void 0);
+	    EmploymentCard = __decorate([
+	        core_1.Component({
+	            directives: [rpg_modal_component_1.RpgModal],
+	            selector: 'employment-card',
+	            template: "\n      \n   <rpg-modal hideCloseButton='true' modalClass=\"RpgUiBox\" closeOnEscape=\"true\" closeOnOutsideClick=\"true\" #employmentDialog>\n        <modal-header>\n            <h1>{{title}}</h1>\n            <h2>{{subtitle}}</h2>\n        </modal-header>\n        <modal-content>\n          <ng-content></ng-content>\n        </modal-content>\n        <modal-footer>\n            <button (click)=\"employmentDialog.close()\">Close</button>\n        </modal-footer>\n    </rpg-modal>\n\n    <button class=\"employment-nav\" (click)='employmentDialog.open()'>\n        <h1>{{title}}</h1>\n        <h2>{{subtitle}}</h2>\n    </button>\n    \n    "
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], EmploymentCard);
+	    return EmploymentCard;
+	}());
 	exports.EmploymentCard = EmploymentCard;
 	
 
@@ -306,14 +269,12 @@ webpackJsonpac__name_([2],{
 	 * These are globally available directives in any template
 	 */
 	// Angular 2
-	const core_1 = __webpack_require__(1);
+	var core_1 = __webpack_require__(1);
 	// Angular 2 Router
-	const router_1 = __webpack_require__(146);
+	var router_1 = __webpack_require__(146);
 	// Angular 2 forms
 	// application_directives: directives that are global through out the application
-	exports.APPLICATION_DIRECTIVES = [
-	    ...router_1.ROUTER_DIRECTIVES,
-	];
+	exports.APPLICATION_DIRECTIVES = router_1.ROUTER_DIRECTIVES.slice();
 	exports.DIRECTIVES = [
 	    { provide: core_1.PLATFORM_DIRECTIVES, multi: true, useValue: exports.APPLICATION_DIRECTIVES }
 	];
@@ -328,7 +289,7 @@ webpackJsonpac__name_([2],{
 	 * These are globally available pipes in any template
 	 */
 	"use strict";
-	const core_1 = __webpack_require__(1);
+	var core_1 = __webpack_require__(1);
 	// application_pipes: pipes that are global through out the application
 	exports.APPLICATION_PIPES = [];
 	exports.PIPES = [
@@ -346,12 +307,12 @@ webpackJsonpac__name_([2],{
 	 */
 	"use strict";
 	// Angular 2
-	const common_1 = __webpack_require__(39);
+	var common_1 = __webpack_require__(39);
 	// Angular 2 Http
-	const http_1 = __webpack_require__(324);
+	var http_1 = __webpack_require__(324);
 	// Angular 2 Router
-	const router_1 = __webpack_require__(146);
-	const app_routes_1 = __webpack_require__(350);
+	var router_1 = __webpack_require__(146);
+	var app_routes_1 = __webpack_require__(350);
 	// AngularClass
 	//import { provideWebpack } from '@angularclass/webpack-toolkit';
 	//import { providePrefetchIdleCallbacks } from '@angularclass/request-idle-callback';
@@ -360,13 +321,11 @@ webpackJsonpac__name_([2],{
 	* providers/directives/pipes that only live in our browser environment
 	*/
 	exports.APPLICATION_PROVIDERS = [
-	    router_1.provideRouter(app_routes_1.routes),
-	    ...http_1.HTTP_PROVIDERS,
+	    router_1.provideRouter(app_routes_1.routes)
+	].concat(http_1.HTTP_PROVIDERS, [
 	    { provide: common_1.LocationStrategy, useClass: common_1.PathLocationStrategy }
-	];
-	exports.PROVIDERS = [
-	    ...exports.APPLICATION_PROVIDERS
-	];
+	]);
+	exports.PROVIDERS = exports.APPLICATION_PROVIDERS.slice();
 	
 
 /***/ },
@@ -378,28 +337,27 @@ webpackJsonpac__name_([2],{
 	/*
 	 * Angular 2 decorators and services
 	 */
-	const core_1 = __webpack_require__(1);
+	var core_1 = __webpack_require__(1);
 	/*
 	 * App Component
 	 * Top Level Component
 	 */
-	let App = class App {
-	};
-	App = __decorate([
-	    core_1.Component({
-	        selector: 'app',
-	        encapsulation: core_1.ViewEncapsulation.None,
-	        styles: [
-	            __webpack_require__(729)
-	        ],
-	        template: `
-	    <main>
-	      <router-outlet></router-outlet>
-	    </main>
-	  `
-	    }), 
-	    __metadata('design:paramtypes', [])
-	], App);
+	var App = (function () {
+	    function App() {
+	    }
+	    App = __decorate([
+	        core_1.Component({
+	            selector: 'app',
+	            encapsulation: core_1.ViewEncapsulation.None,
+	            styles: [
+	                __webpack_require__(729)
+	            ],
+	            template: "\n    <main>\n      <router-outlet></router-outlet>\n    </main>\n  "
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], App);
+	    return App;
+	}());
 	exports.App = App;
 	/*
 	 * Please review the https://github.com/AngularClass/angular2-examples/ repo for
@@ -444,20 +402,23 @@ webpackJsonpac__name_([2],{
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	const core_1 = __webpack_require__(1);
-	const view_components_1 = __webpack_require__(518);
-	let RpgResume = class RpgResume {
-	};
-	RpgResume = __decorate([
-	    core_1.Component({
-	        selector: 'rpg-resume',
-	        encapsulation: core_1.ViewEncapsulation.None,
-	        directives: [view_components_1.Skill, view_components_1.SkillCard, view_components_1.SkillKey, view_components_1.BiographyCard, view_components_1.Employment, view_components_1.EmploymentCard, view_components_1.EmploymentCardSet, view_components_1.TitleCard],
-	        //styles: [`./rpg-resume.css`],
-	        template: __webpack_require__(525)
-	    }), 
-	    __metadata('design:paramtypes', [])
-	], RpgResume);
+	var core_1 = __webpack_require__(1);
+	var view_components_1 = __webpack_require__(518);
+	var RpgResume = (function () {
+	    function RpgResume() {
+	    }
+	    RpgResume = __decorate([
+	        core_1.Component({
+	            selector: 'rpg-resume',
+	            encapsulation: core_1.ViewEncapsulation.None,
+	            directives: [view_components_1.Skill, view_components_1.SkillCard, view_components_1.SkillKey, view_components_1.BiographyCard, view_components_1.Employment, view_components_1.EmploymentCard, view_components_1.EmploymentCardSet, view_components_1.TitleCard],
+	            //styles: [`./rpg-resume.css`],
+	            template: __webpack_require__(525)
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], RpgResume);
+	    return RpgResume;
+	}());
 	exports.RpgResume = RpgResume;
 	
 
@@ -467,62 +428,49 @@ webpackJsonpac__name_([2],{
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	const core_1 = __webpack_require__(1);
+	var core_1 = __webpack_require__(1);
 	//import {FullScreenTextPanel} from './full-screen-text-panel.component';
 	//import {Modal} from 'ng2-modal';
-	const rpg_modal_component_1 = __webpack_require__(102);
-	let Paragraph = class Paragraph {
-	    constructor(elm, r) {
+	var rpg_modal_component_1 = __webpack_require__(102);
+	var Paragraph = (function () {
+	    function Paragraph(elm, r) {
 	        this.elm = elm;
 	        this.r = r;
 	    }
-	    ngAfterContentInit() {
+	    Paragraph.prototype.ngAfterContentInit = function () {
 	        this.content = this.elm.nativeElement.innerText; //This may break in future
+	    };
+	    Paragraph = __decorate([
+	        core_1.Directive({
+	            selector: 'p'
+	        }), 
+	        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object, (typeof (_b = typeof core_1.Renderer !== 'undefined' && core_1.Renderer) === 'function' && _b) || Object])
+	    ], Paragraph);
+	    return Paragraph;
+	    var _a, _b;
+	}());
+	var BiographyCard = (function () {
+	    function BiographyCard() {
 	    }
-	};
-	Paragraph = __decorate([
-	    core_1.Directive({
-	        selector: 'p'
-	    }), 
-	    __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object, (typeof (_b = typeof core_1.Renderer !== 'undefined' && core_1.Renderer) === 'function' && _b) || Object])
-	], Paragraph);
-	let BiographyCard = class BiographyCard {
-	    ngAfterContentInit() {
-	    }
-	};
-	__decorate([
-	    core_1.ContentChildren(Paragraph), 
-	    __metadata('design:type', (typeof (_c = typeof core_1.QueryList !== 'undefined' && core_1.QueryList) === 'function' && _c) || Object)
-	], BiographyCard.prototype, "children", void 0);
-	BiographyCard = __decorate([
-	    core_1.Component({
-	        selector: 'bio-card',
-	        directives: [rpg_modal_component_1.RpgModal, Paragraph],
-	        template: `
-	    <button (click)="bioModal.open()">Read More</button>
-	    <h2>Biography</h2>
-	    <ng-content></ng-content>
-	    
-	    <rpg-modal modalClass="RpgUiBox" hideCloseButton="true" closeOnEscape="true" closeOnOutsideClick="true" #bioModal>
-	        <modal-header>
-	            Biography
-	        </modal-header>
-	        <modal-content>
-	            <p *ngFor="let child of children">
-	                {{child.content}}
-	            </p>
-	        </modal-content>
-	        <modal-footer>
-	            <button (click)="bioModal.close()">Close</button>
-	        </modal-footer>
-	    </rpg-modal>
-	    `
-	    }), 
-	    __metadata('design:paramtypes', [])
-	], BiographyCard);
+	    BiographyCard.prototype.ngAfterContentInit = function () {
+	    };
+	    __decorate([
+	        core_1.ContentChildren(Paragraph), 
+	        __metadata('design:type', (typeof (_a = typeof core_1.QueryList !== 'undefined' && core_1.QueryList) === 'function' && _a) || Object)
+	    ], BiographyCard.prototype, "children", void 0);
+	    BiographyCard = __decorate([
+	        core_1.Component({
+	            selector: 'bio-card',
+	            directives: [rpg_modal_component_1.RpgModal, Paragraph],
+	            template: "\n    <button (click)=\"bioModal.open()\">Read More</button>\n    <h2>Biography</h2>\n    <ng-content></ng-content>\n    \n    <rpg-modal modalClass=\"RpgUiBox\" hideCloseButton=\"true\" closeOnEscape=\"true\" closeOnOutsideClick=\"true\" #bioModal>\n        <modal-header>\n            Biography\n        </modal-header>\n        <modal-content>\n            <p *ngFor=\"let child of children\">\n                {{child.content}}\n            </p>\n        </modal-content>\n        <modal-footer>\n            <button (click)=\"bioModal.close()\">Close</button>\n        </modal-footer>\n    </rpg-modal>\n    "
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], BiographyCard);
+	    return BiographyCard;
+	    var _a;
+	}());
 	exports.BiographyCard = BiographyCard;
-	var _a, _b, _c;
-
+	
 
 /***/ },
 
@@ -530,21 +478,22 @@ webpackJsonpac__name_([2],{
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	const core_1 = __webpack_require__(1);
-	const employment_card_component_1 = __webpack_require__(351);
-	const rpg_modal_component_1 = __webpack_require__(102);
-	let EmploymentCardSet = class EmploymentCardSet {
-	};
-	EmploymentCardSet = __decorate([
-	    core_1.Component({
-	        directives: [employment_card_component_1.EmploymentCard, rpg_modal_component_1.RpgModal],
-	        selector: 'employment-cardset',
-	        template: `
-	<ng-content></ng-content>
-	`
-	    }), 
-	    __metadata('design:paramtypes', [])
-	], EmploymentCardSet);
+	var core_1 = __webpack_require__(1);
+	var employment_card_component_1 = __webpack_require__(351);
+	var rpg_modal_component_1 = __webpack_require__(102);
+	var EmploymentCardSet = (function () {
+	    function EmploymentCardSet() {
+	    }
+	    EmploymentCardSet = __decorate([
+	        core_1.Component({
+	            directives: [employment_card_component_1.EmploymentCard, rpg_modal_component_1.RpgModal],
+	            selector: 'employment-cardset',
+	            template: "\n<ng-content></ng-content>\n"
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], EmploymentCardSet);
+	    return EmploymentCardSet;
+	}());
 	exports.EmploymentCardSet = EmploymentCardSet;
 	
 
@@ -554,44 +503,39 @@ webpackJsonpac__name_([2],{
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	const core_1 = __webpack_require__(1);
-	let Employment = class Employment {
-	};
-	__decorate([
-	    core_1.Input('job-title'), 
-	    __metadata('design:type', String)
-	], Employment.prototype, "jobTitle", void 0);
-	__decorate([
-	    core_1.Input('start-date'), 
-	    __metadata('design:type', String)
-	], Employment.prototype, "startDate", void 0);
-	__decorate([
-	    core_1.Input('end-date'), 
-	    __metadata('design:type', String)
-	], Employment.prototype, "endDate", void 0);
-	__decorate([
-	    core_1.Input(), 
-	    __metadata('design:type', String)
-	], Employment.prototype, "employer", void 0);
-	__decorate([
-	    core_1.Input(), 
-	    __metadata('design:type', String)
-	], Employment.prototype, "location", void 0);
-	Employment = __decorate([
-	    core_1.Component({
-	        selector: 'employment',
-	        template: `<header>
-	                <h1 class="dates">{{startDate}} through {{endDate}}</h1>
-	                <h1 class="Employer">{{employer}}</h1>
-	                <h1 class="Location">{{location}}</h1>
-	                </header>
-	                <main>
-	                <h2 class="JobTitle">{{jobTitle}}</h2>
-	                <ng-content></ng-content>
-	                </main>`
-	    }), 
-	    __metadata('design:paramtypes', [])
-	], Employment);
+	var core_1 = __webpack_require__(1);
+	var Employment = (function () {
+	    function Employment() {
+	    }
+	    __decorate([
+	        core_1.Input('job-title'), 
+	        __metadata('design:type', String)
+	    ], Employment.prototype, "jobTitle", void 0);
+	    __decorate([
+	        core_1.Input('start-date'), 
+	        __metadata('design:type', String)
+	    ], Employment.prototype, "startDate", void 0);
+	    __decorate([
+	        core_1.Input('end-date'), 
+	        __metadata('design:type', String)
+	    ], Employment.prototype, "endDate", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], Employment.prototype, "employer", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], Employment.prototype, "location", void 0);
+	    Employment = __decorate([
+	        core_1.Component({
+	            selector: 'employment',
+	            template: "<header>\n                <h1 class=\"dates\">{{startDate}} through {{endDate}}</h1>\n                <h1 class=\"Employer\">{{employer}}</h1>\n                <h1 class=\"Location\">{{location}}</h1>\n                </header>\n                <main>\n                <h2 class=\"JobTitle\">{{jobTitle}}</h2>\n                <ng-content></ng-content>\n                </main>"
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], Employment);
+	    return Employment;
+	}());
 	exports.Employment = Employment;
 	
 
@@ -621,26 +565,24 @@ webpackJsonpac__name_([2],{
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	const core_1 = __webpack_require__(1);
-	let SkillCard = class SkillCard {
-	};
-	__decorate([
-	    core_1.Input(), 
-	    __metadata('design:type', String)
-	], SkillCard.prototype, "title", void 0);
-	SkillCard = __decorate([
-	    core_1.Component({
-	        directives: [],
-	        selector: 'skill-card',
-	        template: `
-	    <h1>{{title}}</h1>
-	    <div>
-	        <ng-content></ng-content>
-	    </div>
-	    `
-	    }), 
-	    __metadata('design:paramtypes', [])
-	], SkillCard);
+	var core_1 = __webpack_require__(1);
+	var SkillCard = (function () {
+	    function SkillCard() {
+	    }
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], SkillCard.prototype, "title", void 0);
+	    SkillCard = __decorate([
+	        core_1.Component({
+	            directives: [],
+	            selector: 'skill-card',
+	            template: "\n    <h1>{{title}}</h1>\n    <div>\n        <ng-content></ng-content>\n    </div>\n    "
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], SkillCard);
+	    return SkillCard;
+	}());
 	exports.SkillCard = SkillCard;
 	
 
@@ -650,21 +592,20 @@ webpackJsonpac__name_([2],{
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	const core_1 = __webpack_require__(1);
-	let SkillKey = class SkillKey {
-	};
-	SkillKey = __decorate([
-	    core_1.Component({
-	        directives: [],
-	        selector: 'skill-key',
-	        template: `
-	    <section class="RpgUiBox">
-	    <img src="../../../assets/img/skillskey.png"/>
-	    </section>
-	    `
-	    }), 
-	    __metadata('design:paramtypes', [])
-	], SkillKey);
+	var core_1 = __webpack_require__(1);
+	var SkillKey = (function () {
+	    function SkillKey() {
+	    }
+	    SkillKey = __decorate([
+	        core_1.Component({
+	            directives: [],
+	            selector: 'skill-key',
+	            template: "\n    <section class=\"RpgUiBox\">\n    <img src=\"../../../assets/img/skillskey.png\"/>\n    </section>\n    "
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], SkillKey);
+	    return SkillKey;
+	}());
 	exports.SkillKey = SkillKey;
 	
 
@@ -674,72 +615,57 @@ webpackJsonpac__name_([2],{
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	const core_1 = __webpack_require__(1);
-	const rpg_modal_component_1 = __webpack_require__(102);
-	let Skill = class Skill {
-	    constructor() {
+	var core_1 = __webpack_require__(1);
+	var rpg_modal_component_1 = __webpack_require__(102);
+	var Skill = (function () {
+	    function Skill() {
 	        this.showSkill = false;
 	        this.currentAnim = "hide";
 	    }
-	    toggleShow() {
+	    Skill.prototype.toggleShow = function () {
 	        this.showSkill = !this.showSkill;
 	        this.currentAnim = this.showSkill ? "show" : "hide";
-	    }
-	};
-	__decorate([
-	    core_1.Input(), 
-	    __metadata('design:type', String)
-	], Skill.prototype, "name", void 0);
-	__decorate([
-	    core_1.Input(), 
-	    __metadata('design:type', Number)
-	], Skill.prototype, "level", void 0);
-	Skill = __decorate([
-	    core_1.Component({
-	        directives: [rpg_modal_component_1.RpgModal],
-	        selector: 'skill',
-	        template: `
-	    <section (click)="skillModal.open()" class="skillContainer">
-	      <div class="skillDisplay">{{name}}</div> <div class="levelDisplay"><img [src]="'../../../assets/img/skills' + level + '.png'"/></div>
-	      
-	   <rpg-modal modalClass="RpgUiBox"  hideCloseButton="true" closeOnEscape="true" closeOnOutsideClick="true" #skillModal>
-	        <modal-header>
-	            {{name}}
-	        </modal-header>
-	        <modal-content>
-	          <ng-content></ng-content>
-	        </modal-content>
-	        <modal-footer>
-	            <button (click)="skillModal.close()">Close</button>
-	        </modal-footer>
-	    </rpg-modal>
-
-	    `,
-	        animations: [
-	            core_1.trigger('showContent', [
-	                core_1.state('show', core_1.style({
-	                    height: '*',
-	                    opacity: 1,
-	                    display: 'block;'
-	                })),
-	                core_1.state('hide', core_1.style({
-	                    height: '0',
-	                    opacity: 0,
-	                    display: 'none'
-	                })),
-	                core_1.transition('hide => show', core_1.animate('250ms ease-in', core_1.keyframes([
-	                    core_1.style({ display: 'block', offset: 0 }),
-	                    core_1.style({ height: '*', opacity: 1, offset: 1 })
-	                ]))),
-	                core_1.transition('show => hide', core_1.animate('250ms ease-out', core_1.keyframes([
-	                    core_1.style({ height: 0, opacity: 0, offset: 0.99 }),
-	                    core_1.style({ display: 'none', offset: 1 }),
-	                ])))
-	            ])
-	        ]
-	    }), 
-	    __metadata('design:paramtypes', [])
-	], Skill);
+	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], Skill.prototype, "name", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Number)
+	    ], Skill.prototype, "level", void 0);
+	    Skill = __decorate([
+	        core_1.Component({
+	            directives: [rpg_modal_component_1.RpgModal],
+	            selector: 'skill',
+	            template: "\n    <section (click)=\"skillModal.open()\" class=\"skillContainer\">\n      <div class=\"skillDisplay\">{{name}}</div> <div class=\"levelDisplay\"><img [src]=\"'../../../assets/img/skills' + level + '.png'\"/></div>\n      \n   <rpg-modal modalClass=\"RpgUiBox\"  hideCloseButton=\"true\" closeOnEscape=\"true\" closeOnOutsideClick=\"true\" #skillModal>\n        <modal-header>\n            {{name}}\n        </modal-header>\n        <modal-content>\n          <ng-content></ng-content>\n        </modal-content>\n        <modal-footer>\n            <button (click)=\"skillModal.close()\">Close</button>\n        </modal-footer>\n    </rpg-modal>\n\n    ",
+	            animations: [
+	                core_1.trigger('showContent', [
+	                    core_1.state('show', core_1.style({
+	                        height: '*',
+	                        opacity: 1,
+	                        display: 'block;'
+	                    })),
+	                    core_1.state('hide', core_1.style({
+	                        height: '0',
+	                        opacity: 0,
+	                        display: 'none'
+	                    })),
+	                    core_1.transition('hide => show', core_1.animate('250ms ease-in', core_1.keyframes([
+	                        core_1.style({ display: 'block', offset: 0 }),
+	                        core_1.style({ height: '*', opacity: 1, offset: 1 })
+	                    ]))),
+	                    core_1.transition('show => hide', core_1.animate('250ms ease-out', core_1.keyframes([
+	                        core_1.style({ height: 0, opacity: 0, offset: 0.99 }),
+	                        core_1.style({ display: 'none', offset: 1 }),
+	                    ])))
+	                ])
+	            ]
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], Skill);
+	    return Skill;
+	}());
 	exports.Skill = Skill;
 	
 
@@ -749,33 +675,31 @@ webpackJsonpac__name_([2],{
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	const core_1 = __webpack_require__(1);
-	let TitleCard = class TitleCard {
-	};
-	__decorate([
-	    core_1.Input(), 
-	    __metadata('design:type', String)
-	], TitleCard.prototype, "name", void 0);
-	__decorate([
-	    core_1.Input(), 
-	    __metadata('design:type', String)
-	], TitleCard.prototype, "email", void 0);
-	__decorate([
-	    core_1.Input(), 
-	    __metadata('design:type', String)
-	], TitleCard.prototype, "phone", void 0);
-	TitleCard = __decorate([
-	    core_1.Component({
-	        selector: 'title-card',
-	        template: `
-	    <h1><img class="profileIcon" src="../../../assets/img/HunterHunnieSprite.png"/> {{name}}</h1>
-	    <h2> Email: {{email}}</h2>
-	    <h2> Phone Number: {{phone}}</h2>
-	    <h2><ng-content></ng-content></h2>
-	    `
-	    }), 
-	    __metadata('design:paramtypes', [])
-	], TitleCard);
+	var core_1 = __webpack_require__(1);
+	var TitleCard = (function () {
+	    function TitleCard() {
+	    }
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], TitleCard.prototype, "name", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], TitleCard.prototype, "email", void 0);
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', String)
+	    ], TitleCard.prototype, "phone", void 0);
+	    TitleCard = __decorate([
+	        core_1.Component({
+	            selector: 'title-card',
+	            template: "\n    <h1><img class=\"profileIcon\" src=\"../../../assets/img/HunterHunnieSprite.png\"/> {{name}}</h1>\n    <h2> Email: {{email}}</h2>\n    <h2> Phone Number: {{phone}}</h2>\n    <h2><ng-content></ng-content></h2>\n    "
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], TitleCard);
+	    return TitleCard;
+	}());
 	exports.TitleCard = TitleCard;
 	//<img class="emailIcon" src="../../../assets/img/email.png"/>
 	//<img class="phoneIcon" src="../../../assets/img/phone.png"/> 
@@ -793,14 +717,10 @@ webpackJsonpac__name_([2],{
 	__export(__webpack_require__(352));
 	__export(__webpack_require__(353));
 	__export(__webpack_require__(354));
-	const browser_directives_2 = __webpack_require__(352);
-	const browser_pipes_2 = __webpack_require__(353);
-	const browser_providers_2 = __webpack_require__(354);
-	exports.PLATFORM_PROVIDERS = [
-	    ...browser_providers_2.PROVIDERS,
-	    ...browser_directives_2.DIRECTIVES,
-	    ...browser_pipes_2.PIPES
-	];
+	var browser_directives_2 = __webpack_require__(352);
+	var browser_pipes_2 = __webpack_require__(353);
+	var browser_providers_2 = __webpack_require__(354);
+	exports.PLATFORM_PROVIDERS = browser_providers_2.PROVIDERS.concat(browser_directives_2.DIRECTIVES, browser_pipes_2.PIPES);
 	
 
 /***/ },
@@ -811,38 +731,32 @@ webpackJsonpac__name_([2],{
 	"use strict";
 	// Angular 2
 	// rc2 workaround
-	const platform_browser_1 = __webpack_require__(84);
-	const core_1 = __webpack_require__(1);
+	var platform_browser_1 = __webpack_require__(84);
+	var core_1 = __webpack_require__(1);
 	// Environment Providers
-	let PROVIDERS = [];
+	var PROVIDERS = [];
 	// Angular debug tools in the dev console
 	// https://github.com/angular/angular/blob/86405345b781a9dc2438c0fbe3e9409245647019/TOOLS_JS.md
-	let _decorateComponentRef = function identity(value) { return value; };
+	var _decorateComponentRef = function identity(value) { return value; };
 	if (false) {
 	    // Production
 	    platform_browser_1.disableDebugTools();
 	    core_1.enableProdMode();
-	    PROVIDERS = [
-	        ...PROVIDERS,
-	    ];
+	    PROVIDERS = PROVIDERS.slice();
 	}
 	else {
-	    _decorateComponentRef = (cmpRef) => {
-	        let _ng = window.ng;
+	    _decorateComponentRef = function (cmpRef) {
+	        var _ng = window.ng;
 	        platform_browser_1.enableDebugTools(cmpRef);
 	        window.ng.probe = _ng.probe;
 	        window.ng.coreTokens = _ng.coreTokens;
 	        return cmpRef;
 	    };
 	    // Development
-	    PROVIDERS = [
-	        ...PROVIDERS,
-	    ];
+	    PROVIDERS = PROVIDERS.slice();
 	}
 	exports.decorateComponentRef = _decorateComponentRef;
-	exports.ENV_PROVIDERS = [
-	    ...PROVIDERS
-	];
+	exports.ENV_PROVIDERS = PROVIDERS.slice();
 	
 
 /***/ },
