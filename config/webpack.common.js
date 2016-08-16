@@ -180,11 +180,13 @@ module.exports = {
       /* File loader for supporting images, for example, in CSS files.
       */
       {
-        test: /\.(jpg|png|gif)$/,
-        loader: 'file'
+        test: /\.(png|jpe?g|gif)$/,
+        loaders: [
+          'url?limit=10000&name=assets/images/[name].[ext]?[hash:20]',
+          'image-webpack?bypassOnDebug&optimizationLevel=6'
+        ]
       }
     ]
-
   },
 
   /*
