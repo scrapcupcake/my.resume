@@ -1,4 +1,11 @@
 import {Component, Input, Output, EventEmitter, ElementRef, ViewChild, ContentChildren, QueryList} from "@angular/core";
+import {  trigger,
+  state,
+  style,
+  transition,
+  animate,
+  keyframes
+} from "@angular/core";
 // Borrowed with open source permission from 
 //https://github.com/pleerock/ng2-modal/blob/master/src/Modal.ts
 
@@ -7,15 +14,38 @@ const CLOSE_CLASS = 'modal-close';
 const DIALOG_CLASS = 'modal-dialog';
 
 @Component({
+    animations: [
+          trigger('openClose', [
+    state('open', style({transform: 'translateX(0), scale(1)', display: 'block'})),
+    state('closed', style({display: 'none'})),
+
+    transition('* => open', [
+      animate(700, keyframes([
+        style({opacity: 0, transform: 'translateX(-100%)', display: 'block', offset: 0}),
+        style({opacity: 1, transform: 'translateX(15px)',  offset: 0.3}),
+        style({opacity: 1, transform: 'translateX(0)',     offset: 1.0})
+      ]))
+    ]),
+    transition('* => closed', [
+      animate(700, keyframes([
+        style({opacity: 1, transform: 'translateX(0)',     offset: 0}),
+        style({opacity: 1, transform: 'translateX(-15px)', offset: 0.7}),
+        style({opacity: 0, transform: 'translateX(100%)',  offset: 0.99}),
+        style({offset: 1, display: 'none'})
+      ]))
+    ])
+  ])
+
+    ],
     selector: "rpg-modal",
     template: `
-<div class="modal" 
+<div [@openClose]="isOpened ? 'open' : 'closed'" class="modal" 
      tabindex="-1"
      role="dialog"
      #modalRoot
      (keydown.esc)="closeOnEscape ? close() : 0"
      [ngClass]="{ in: isOpened, fade: isOpened, out: !isOpened, fadeOut: !isOpened }"
-     [ngStyle]="{ display: isOpened ? 'block' : 'none', zIndex: isOpened ? 10 : -10 }">
+     [ngStyle]="{ zIndex: isOpened ? 10 : -10 }">
     <div [class]="modalClasses" (click)="preventClosing($event)">
         <div class="modal-content" tabindex="0" *ngIf="isOpened">
             <div class="modal-header">
