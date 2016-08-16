@@ -638,7 +638,7 @@ webpackJsonpac__name_([2],{
 	        core_1.Component({
 	            directives: [rpg_modal_component_1.RpgModal],
 	            selector: 'skill',
-	            template: "\n    <section (click)=\"skillModal.open()\" class=\"skillContainer\">\n      <div class=\"skillDisplay\">{{name}}</div> <div class=\"levelDisplay\"><img [src]=\"'../../../assets/img/skills' + level + '.png'\"/></div>\n      \n   <rpg-modal modalClass=\"RpgUiBox\"  hideCloseButton=\"true\" closeOnEscape=\"true\" closeOnOutsideClick=\"true\" #skillModal>\n        <modal-header>\n            {{name}}\n        </modal-header>\n        <modal-content>\n          <ng-content></ng-content>\n        </modal-content>\n        <modal-footer>\n            <button (click)=\"skillModal.close()\">Close</button>\n        </modal-footer>\n    </rpg-modal>\n\n    ",
+	            template: "\n    <section (click)=\"skillModal.open()\" class=\"skillContainer\">\n      <div class=\"skillDisplay\">{{name}}</div> <div class=\"levelDisplay\"><img [src]=\"'assets/img/skills' + level + '.png'\"/></div>\n      \n   <rpg-modal modalClass=\"RpgUiBox\"  hideCloseButton=\"true\" closeOnEscape=\"true\" closeOnOutsideClick=\"true\" #skillModal>\n        <modal-header>\n            {{name}}\n        </modal-header>\n        <modal-content>\n          <ng-content></ng-content>\n        </modal-content>\n        <modal-footer>\n            <button (click)=\"skillModal.close()\">Close</button>\n        </modal-footer>\n    </rpg-modal>\n\n    ",
 	            animations: [
 	                core_1.trigger('showContent', [
 	                    core_1.state('show', core_1.style({
@@ -694,15 +694,15 @@ webpackJsonpac__name_([2],{
 	    TitleCard = __decorate([
 	        core_1.Component({
 	            selector: 'title-card',
-	            template: "\n    <h1><img class=\"profileIcon\" src=\"../../../assets/img/HunterHunnieSprite.png\"/> {{name}}</h1>\n    <h2> Email: {{email}}</h2>\n    <h2> Phone Number: {{phone}}</h2>\n    <h2><ng-content></ng-content></h2>\n    "
+	            template: "\n    <h1><img class=\"profileIcon\" src=\"assets/img/HunterHunnieSprite.png\"/> {{name}}</h1>\n    <h2> Email: {{email}}</h2>\n    <h2> Phone Number: {{phone}}</h2>\n    <h2><ng-content></ng-content></h2>\n    "
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], TitleCard);
 	    return TitleCard;
 	}());
 	exports.TitleCard = TitleCard;
-	//<img class="emailIcon" src="../../../assets/img/email.png"/>
-	//<img class="phoneIcon" src="../../../assets/img/phone.png"/> 
+	//<img class="emailIcon" src="assets/img/email.png"/>
+	//<img class="phoneIcon" src="assets/img/phone.png"/> 
 	
 
 /***/ },
