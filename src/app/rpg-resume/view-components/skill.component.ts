@@ -14,7 +14,7 @@ import {RpgModal} from './rpg-modal.component';
     selector: 'skill',
     template: `
     <section (click)="skillModal.open()" class="skillContainer">
-      <div class="skillDisplay">{{name}}</div> <div class="levelDisplay"><img [src]="'../../../assets/img/skills' + level + '.png'"/></div>
+      <div class="skillDisplay">{{name}}</div> <div class="levelDisplay"><img [src]="'assets/img/skills' + level + '.png'"/></div>
       
    <rpg-modal modalClass="RpgUiBox"  hideCloseButton="true" closeOnEscape="true" closeOnOutsideClick="true" #skillModal>
         <modal-header>
