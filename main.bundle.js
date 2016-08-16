@@ -600,7 +600,7 @@ webpackJsonpac__name_([2],{
 	        core_1.Component({
 	            directives: [],
 	            selector: 'skill-key',
-	            template: "\n    <section class=\"RpgUiBox\">\n    <img src=\"../../../assets/img/skillskey.png\"/>\n    </section>\n    "
+	            template: "\n    <section class=\"RpgUiBox\">\n    <img src=\"assets/img/skillskey.png\"/>\n    </section>\n    "
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], SkillKey);
