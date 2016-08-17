@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'BitFont';
-    src: url(/assets/fonts/PixelDigivolve.otf);
+    src: url(../assets/fonts/PixelDigivolve.otf);
 }
 
 html, body{

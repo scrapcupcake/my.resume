@@ -163,7 +163,7 @@ module.exports = {
        */
       {
         test: /\.css$/,
-        loaders: ['to-string-loader', 'css-loader']
+        loaders: ['css-to-string-loader', 'css-loader'],
       },
 
       /* Raw loader support for *.html
@@ -185,6 +185,10 @@ module.exports = {
           'url?limit=10000&name=assets/images/[name].[ext]?[hash:20]',
           'image-webpack?bypassOnDebug&optimizationLevel=6'
         ]
+      },
+      {
+          test: /\.(eot|svg|ttf|woff|woff2|otf)$/,
+          loader: 'file?name=assets/fonts/[name].[ext]'
       }
     ]
   },
