@@ -1,18 +1,44 @@
 import {Component, Input} from '@angular/core';
+import {TitleBox} from './title-box.component';
 
 @Component({
+    directives: [TitleBox],
     selector: 'title-card',
-    template: `
-    <h1><img class="profileIcon" src="assets/img/HunterHunnieSprite.png"/> {{name}}</h1>
-    <h2> Email: {{email}}</h2>
-    <h2> Phone Number: {{phone}}</h2>
-    <h2><ng-content></ng-content></h2>
-    `
+    template:
+`
+    <h1 class="image-header"><img class="profileIcon" src="assets/img/HunterHunnieSprite.png"/> {{name}}</h1>
+    <p class="contact-me"> <img src="assets/img/email.png" alt="Email"/> <a [href]="mailto">{{email}}</a></p>
+    <p class="contact-me"> <img src="assets/img/phone.png" alt="Phone"> <a [href]="phoneto">{{phone}}</a></p>
+    <title-box title="Career">
+    Troubleshooter
+    </title-box>
+    <title-box title="Seeking!">
+        <ul>
+        <li>Retail</li>
+        <li>Web Development</li>
+        </ul>
+    </title-box>
+`
 })
 export class TitleCard{
     @Input() name: string;
     @Input() email: string;
     @Input() phone: string;
+    @Input() careerClass: string;
+    @Input() seeking: string;
+
+    mailto: string;
+    phoneto: string;
+    seekingArray: string[] = [];
+
+    constructor(){
+        this.mailto = "mailto:"+this.email;
+        this.phoneto = "tel:"+this.phone;
+        if(this.seeking){
+            this.seekingArray = this.seeking.split(', ');
+        }
+            
+    }
 }
 
 //<img class="emailIcon" src="assets/img/email.png"/>
