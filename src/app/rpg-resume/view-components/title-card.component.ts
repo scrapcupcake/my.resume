@@ -12,11 +12,9 @@ import {TitleBox} from './title-box.component';
     <title-box title="Career">
     Troubleshooter
     </title-box>
-    <title-box title="Seeking!">
-        <ul>
-        <li>Retail</li>
-        <li>Web Development</li>
-        </ul>
+    <title-box class="seeking" title="Seeking!">
+        <p>Retail</p>
+        <p>Web Development</p>
     </title-box>
 `
 })

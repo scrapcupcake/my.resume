@@ -16,21 +16,21 @@ const DIALOG_CLASS = 'modal-dialog';
 @Component({
     animations: [
           trigger('openClose', [
-    state('open', style({transform: 'translateX(0), scale(1)', display: 'block'})),
+    state('open', style({transform: 'scale(1)', display: 'block'})),
     state('closed', style({display: 'none'})),
 
     transition('* => open', [
-      animate(700, keyframes([
-        style({opacity: 0, transform: 'translateX(-100%)', display: 'block', offset: 0}),
-        style({opacity: 1, transform: 'translateX(15px)',  offset: 0.3}),
-        style({opacity: 1, transform: 'translateX(0)',     offset: 1.0})
+      animate(500, keyframes([
+        style({opacity: 0, transform: 'scale(0.1) translateY(100vh)', display: 'block', offset: 0}),
+        style({opacity: 1, transform: 'scale(1.2) translateY(0)', offset: 0.7}),
+        style({opacity: 1, transform: 'scale(1) ', offset: 1.0})
       ]))
     ]),
-    transition('* => closed', [
-      animate(700, keyframes([
-        style({opacity: 1, transform: 'translateX(0)',     offset: 0}),
-        style({opacity: 1, transform: 'translateX(-15px)', offset: 0.7}),
-        style({opacity: 0, transform: 'translateX(100%)',  offset: 0.99}),
+    transition('open => closed', [
+      animate(250, keyframes([
+        style({opacity: 1, transform: 'scale(1) translateX(0)',     offset: 0}),
+        style({opacity: 1, transform: 'scale(1.2) translateX(30%)', offset: 0.3}),
+        style({opacity: 0, transform: 'scale(0.1) translateX(100%)',  offset: 0.99}),
         style({offset: 1, display: 'none'})
       ]))
     ])
@@ -44,10 +44,9 @@ const DIALOG_CLASS = 'modal-dialog';
      role="dialog"
      #modalRoot
      (keydown.esc)="closeOnEscape ? close() : 0"
-     [ngClass]="{ in: isOpened, fade: isOpened, out: !isOpened, fadeOut: !isOpened }"
-     [ngStyle]="{ zIndex: isOpened ? 10 : -10 }">
+     [ngClass]="{ in: isOpened, fade: isOpened, out: !isOpened, fadeOut: !isOpened }">
     <div [class]="modalClasses" (click)="preventClosing($event)">
-        <div class="modal-content" tabindex="0" *ngIf="isOpened">
+        <div class="modal-content" tabindex="0">
             <div class="modal-header">
                 <button *ngIf="!hideCloseButton" type="button" class="close" data-dismiss="modal" [attr.aria-label]="cancelButtonLabel || 'Close'" (click)="close()"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" *ngIf="title">{{ title }}</h4>
