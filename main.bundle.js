@@ -223,7 +223,7 @@ webpackJsonpac__name_([2],{
 	"use strict";
 	var rpg_resume_1 = __webpack_require__(515);
 	exports.routes = [
-	    { path: '', component: rpg_resume_1.RpgResume },
+	    { path: '', component: rpg_resume_1.CannaRpgResume },
 	    { path: 'canna', component: rpg_resume_1.CannaRpgResume }
 	];
 	
