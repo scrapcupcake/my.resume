@@ -4,9 +4,10 @@ import {RpgModal} from './rpg-modal.component';
 
 @Component({
   directives: [EmploymentCard, RpgModal],
-    selector: 'employment-cardset',
-template: `
-<ng-content></ng-content>
+  selector: 'employment-cardset',
+  styles: [``],
+  template: `
+  <ng-content></ng-content>
 `
 })
 export class EmploymentCardSet{
