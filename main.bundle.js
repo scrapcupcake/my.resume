@@ -13,13 +13,13 @@ webpackJsonpac__name_([2],{
 	* Platform and Environment
 	* our providers/directives/pipes
 	*/
-	var browser_1 = __webpack_require__(524);
-	var environment_1 = __webpack_require__(525);
+	var browser_1 = __webpack_require__(525);
+	var environment_1 = __webpack_require__(526);
 	/*
 	* App Component
 	* our top level component that holds all of our components
 	*/
-	var app_1 = __webpack_require__(512);
+	var app_1 = __webpack_require__(513);
 	/*
 	 * Bootstrap our Angular app with a top level component `App` and inject
 	 * our Services and Providers into Angular's dependency injection
@@ -221,9 +221,10 @@ webpackJsonpac__name_([2],{
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var rpg_resume_1 = __webpack_require__(513);
+	var rpg_resume_1 = __webpack_require__(515);
 	exports.routes = [
 	    { path: '', component: rpg_resume_1.RpgResume },
+	    { path: 'canna', component: rpg_resume_1.CannaRpgResume }
 	];
 	
 
@@ -265,6 +266,26 @@ webpackJsonpac__name_([2],{
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
+	function __export(m) {
+	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+	}
+	__export(__webpack_require__(517));
+	__export(__webpack_require__(351));
+	__export(__webpack_require__(519));
+	__export(__webpack_require__(520));
+	__export(__webpack_require__(522));
+	__export(__webpack_require__(524));
+	__export(__webpack_require__(521));
+	__export(__webpack_require__(518));
+	__export(__webpack_require__(102));
+	
+
+/***/ },
+
+/***/ 353:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
 	/*
 	 * These are globally available directives in any template
 	 */
@@ -282,7 +303,7 @@ webpackJsonpac__name_([2],{
 
 /***/ },
 
-/***/ 353:
+/***/ 354:
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -299,7 +320,7 @@ webpackJsonpac__name_([2],{
 
 /***/ },
 
-/***/ 354:
+/***/ 355:
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -330,7 +351,7 @@ webpackJsonpac__name_([2],{
 
 /***/ },
 
-/***/ 511:
+/***/ 512:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -350,7 +371,7 @@ webpackJsonpac__name_([2],{
 	            selector: 'app',
 	            encapsulation: core_1.ViewEncapsulation.None,
 	            styles: [
-	                __webpack_require__(527)
+	                __webpack_require__(528)
 	            ],
 	            template: "\n    <main>\n      <router-outlet></router-outlet>\n    </main>\n  "
 	        }), 
@@ -370,22 +391,6 @@ webpackJsonpac__name_([2],{
 
 /***/ },
 
-/***/ 512:
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	function __export(m) {
-	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-	}
-	// App
-	__export(__webpack_require__(511));
-	__export(__webpack_require__(350));
-	// Application wide providers
-	exports.APP_PROVIDERS = [];
-	
-
-/***/ },
-
 /***/ 513:
 /***/ function(module, exports, __webpack_require__) {
 
@@ -393,7 +398,11 @@ webpackJsonpac__name_([2],{
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(514));
+	// App
+	__export(__webpack_require__(512));
+	__export(__webpack_require__(350));
+	// Application wide providers
+	exports.APP_PROVIDERS = [];
 	
 
 /***/ },
@@ -403,7 +412,46 @@ webpackJsonpac__name_([2],{
 
 	"use strict";
 	var core_1 = __webpack_require__(1);
-	var view_components_1 = __webpack_require__(518);
+	var view_components_1 = __webpack_require__(352);
+	var CannaRpgResume = (function () {
+	    function CannaRpgResume() {
+	    }
+	    CannaRpgResume = __decorate([
+	        core_1.Component({
+	            selector: 'canna-rpg-resume',
+	            encapsulation: core_1.ViewEncapsulation.None,
+	            directives: [view_components_1.Skill, view_components_1.SkillCard, view_components_1.SkillKey, view_components_1.BiographyCard, view_components_1.Employment, view_components_1.EmploymentCard, view_components_1.EmploymentCardSet, view_components_1.TitleCard],
+	            //styles: [`./rpg-resume.css`],
+	            template: __webpack_require__(530)
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], CannaRpgResume);
+	    return CannaRpgResume;
+	}());
+	exports.CannaRpgResume = CannaRpgResume;
+	
+
+/***/ },
+
+/***/ 515:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	function __export(m) {
+	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+	}
+	__export(__webpack_require__(516));
+	__export(__webpack_require__(514));
+	
+
+/***/ },
+
+/***/ 516:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var core_1 = __webpack_require__(1);
+	var view_components_1 = __webpack_require__(352);
 	var RpgResume = (function () {
 	    function RpgResume() {
 	    }
@@ -413,7 +461,7 @@ webpackJsonpac__name_([2],{
 	            encapsulation: core_1.ViewEncapsulation.None,
 	            directives: [view_components_1.Skill, view_components_1.SkillCard, view_components_1.SkillKey, view_components_1.BiographyCard, view_components_1.Employment, view_components_1.EmploymentCard, view_components_1.EmploymentCardSet, view_components_1.TitleCard],
 	            //styles: [`./rpg-resume.css`],
-	            template: __webpack_require__(529)
+	            template: __webpack_require__(531)
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], RpgResume);
@@ -424,7 +472,7 @@ webpackJsonpac__name_([2],{
 
 /***/ },
 
-/***/ 515:
+/***/ 517:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -474,7 +522,7 @@ webpackJsonpac__name_([2],{
 
 /***/ },
 
-/***/ 516:
+/***/ 518:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -488,7 +536,8 @@ webpackJsonpac__name_([2],{
 	        core_1.Component({
 	            directives: [employment_card_component_1.EmploymentCard, rpg_modal_component_1.RpgModal],
 	            selector: 'employment-cardset',
-	            template: "\n<ng-content></ng-content>\n"
+	            styles: [""],
+	            template: "\n  <ng-content></ng-content>\n"
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], EmploymentCardSet);
@@ -499,7 +548,7 @@ webpackJsonpac__name_([2],{
 
 /***/ },
 
-/***/ 517:
+/***/ 519:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -542,27 +591,7 @@ webpackJsonpac__name_([2],{
 
 /***/ },
 
-/***/ 518:
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	function __export(m) {
-	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-	}
-	__export(__webpack_require__(515));
-	__export(__webpack_require__(351));
-	__export(__webpack_require__(517));
-	__export(__webpack_require__(519));
-	__export(__webpack_require__(521));
-	__export(__webpack_require__(523));
-	__export(__webpack_require__(520));
-	__export(__webpack_require__(516));
-	__export(__webpack_require__(102));
-	
-
-/***/ },
-
-/***/ 519:
+/***/ 520:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -589,7 +618,7 @@ webpackJsonpac__name_([2],{
 
 /***/ },
 
-/***/ 520:
+/***/ 521:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -612,7 +641,7 @@ webpackJsonpac__name_([2],{
 
 /***/ },
 
-/***/ 521:
+/***/ 522:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -672,7 +701,7 @@ webpackJsonpac__name_([2],{
 
 /***/ },
 
-/***/ 522:
+/***/ 523:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -699,12 +728,12 @@ webpackJsonpac__name_([2],{
 
 /***/ },
 
-/***/ 523:
+/***/ 524:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(1);
-	var title_box_component_1 = __webpack_require__(522);
+	var title_box_component_1 = __webpack_require__(523);
 	var TitleCard = (function () {
 	    function TitleCard() {
 	        this.seekingArray = [];
@@ -751,25 +780,25 @@ webpackJsonpac__name_([2],{
 
 /***/ },
 
-/***/ 524:
+/***/ 525:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(352));
 	__export(__webpack_require__(353));
 	__export(__webpack_require__(354));
-	var browser_directives_2 = __webpack_require__(352);
-	var browser_pipes_2 = __webpack_require__(353);
-	var browser_providers_2 = __webpack_require__(354);
+	__export(__webpack_require__(355));
+	var browser_directives_2 = __webpack_require__(353);
+	var browser_pipes_2 = __webpack_require__(354);
+	var browser_providers_2 = __webpack_require__(355);
 	exports.PLATFORM_PROVIDERS = browser_providers_2.PROVIDERS.concat(browser_directives_2.DIRECTIVES, browser_pipes_2.PIPES);
 	
 
 /***/ },
 
-/***/ 525:
+/***/ 526:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -805,28 +834,28 @@ webpackJsonpac__name_([2],{
 
 /***/ },
 
-/***/ 526:
+/***/ 527:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(729)();
+	exports = module.exports = __webpack_require__(731)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "@font-face {\r\n    font-family: 'BitFont';\r\n    src: url(" + __webpack_require__(528) + ");\r\n}\r\n\r\nhtml, body{\r\n  height: 100%;\r\n  width: 100%;\r\n  margin: 0;\r\n  padding: 0;\r\n  min-height: 100vh;\r\n  min-width: 100vw;\r\n  font-family: \"BitFont\", Arial, Helvetica, sans-serif;\r\n  background-color: black;\r\n}\r\n\r\np, h1, h2, h3, h4, h5, h6 {\r\n    font-family: \"BitFont\", Arial, Helvetica, sans-serif;\r\n}\r\n\r\n.RpgUiBox {\r\n  color: rgb(240,240,240);\r\n\r\n  border-radius: 15px;\r\n  box-sizing: border-box;\r\n  margin: 10px;\r\n  box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;\r\n\r\n  background-color: blue;\r\n  background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); /* FF3.6-15 */\r\n  background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */\r\n  background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\r\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */\r\n  padding: 10px;\r\n  overflow-y: auto;\r\n  overflow-x: hidden;\r\n}\r\n\r\n.RpgUiBox h1, .RpgUiBox h2 {\r\n  text-shadow: 3px 4px 0px black;\r\n  clear: both;\r\n}\r\n\r\n\r\n\r\n.modal{\r\n  z-index: 10;\r\n  position: fixed;\r\n  width: 85%;\r\n  max-height: 85%;\r\n  top: 12.5%;\r\n  left: 12.5%;\r\n  margin: 0px;\r\n  padding: 0px;\r\n\r\n  color: rgb(240,240,240);\r\n\r\n  border-radius: 15px;\r\n  box-sizing: border-box;\r\n  margin: 10px;\r\n  box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;\r\n\r\n  background-color: blue;\r\n  background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); /* FF3.6-15 */\r\n  background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */\r\n  background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\r\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */\r\n  padding: 10px;\r\n  overflow-y: auto;\r\n  overflow-x: hidden;\r\n}\r\n\r\n.modal-body {\r\n    overflow-y: auto;\r\n}\r\n\r\n\r\n\r\n.modal-backdrop{\r\n    background-color: black;\r\n    opacity: 0.5;\r\n    position: fixed;\r\n    z-index: 5;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n.rpg-resume {\r\n    position: absolute;\r\n    box-sizing: border-box;\r\n    height: 100vh;\r\n    min-height: 100vh;\r\n    overflow: hidden;\r\n    margin: 0;\r\n    padding: 0;\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.split-left-vertical {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    margin: 0;\r\n    padding: 0;\r\n    flex-direction: column;\r\n    \r\n    flex: 0 0 66%;\r\n}\r\n\r\n\r\n.top-left {\r\n    width: 100%;\r\n    margin: 0;\r\n    padding: 0;\r\n    flex-direction: row;\r\n    display: flex;\r\n    align-items: stretch;\r\n    -webkit-box-align-content: stretch;\r\n    flex-basis: 66%;\r\n}\r\n\r\n.bottom-left {\r\n    height: 50%;\r\n    flex-basis: 33%;\r\n}\r\n\r\nemployment-cardset {\r\n        display: flex;\r\n        width: 95%;\r\n        height: 80%;\r\n        margin: 0;\r\n        padding: 0;\r\n}\r\n\r\nemployment-card{\r\n    flex: 1 0 1%;\r\n}\r\n\r\n.employment-nav {\r\n    width: 95%;\r\n    height: 95%;\r\n    color: rgb(240,240,240);\r\n\r\n  border-radius: 15px;\r\n  box-sizing: border-box;\r\n  margin: 15px;\r\n  box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;\r\n\r\n  background-color: blue;\r\n  background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); /* FF3.6-15 */\r\n  background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */\r\n  background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\r\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */\r\n\r\n  font-size: large;\r\n}\r\n\r\n.right {\r\n    box-sizing: border-box;\r\n    overflow-y: auto;\r\n    height: 100%;\r\n    display: flex;\r\n    margin: 0;\r\n    padding: 0;\r\n    flex-direction: column;\r\n    \r\n    flex: 0 0 33%;\r\n}\r\n\r\n.right skill-card{\r\n    flex: 5;\r\n}\r\n\r\nbio-card {\r\n    position: relative;\r\n    overflow: hidden !important;\r\n    flex: 2;\r\n}\r\n\r\nbio-card:before {\r\n    content:'';\r\n    width:100%;\r\n    height:100%;    \r\n    position:absolute;\r\n    left:0;\r\n    top:0;\r\n    background:linear-gradient(transparent 45%, #1e5799 85%, transparent 85.1%);\r\n    pointer-events: none;\r\n    margin-left: 3px;\r\n    margin-right: 3px;\r\n}\r\n\r\nbio-card > button {\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 15%;\r\n    bottom: 0;\r\n    left: 0;\r\n    font-family: \"BitFont\", Arial, Helvetica, sans-serif;\r\n    font-size: large;\r\n\r\n    color: rgb(240,240,240);\r\n    border-radius: 10px;\r\n    box-sizing: border-box;\r\n    box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;\r\n\r\n    background-color: blue;\r\n    background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); /* FF3.6-15 */\r\n    background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */\r\n    background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\r\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */\r\n    padding: 5px;\r\n    flex: 1;\r\n        \r\n}\r\n\r\nrpg-modal button {\r\n    width: 100%;\r\n    font-family: \"BitFont\", Arial, Helvetica, sans-serif;\r\n    font-size: large;\r\n\r\n    color: rgb(240,240,240);\r\n    border-radius: 10px;\r\n    box-sizing: border-box;\r\n    margin-top: 20px;\r\n    box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;\r\n\r\n    background-color: blue;\r\n    background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); /* FF3.6-15 */\r\n    background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */\r\n    background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\r\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */\r\n    padding: 5px;\r\n}\r\n\r\ntitle-card {\r\n      flex: 1 0;\r\n      overflow-y: hidden !important;\r\n}\r\n\r\ntitle-card a{\r\n    color: white;\r\n    font-style: none;\r\n}\r\n\r\ntitle-card h1.image-header {\r\n  font-size: 36px;\r\n  border-radius: 15px;\r\n  box-sizing: border-box;\r\n  margin: 10px;\r\n  box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;\r\n\r\n  background-color: blue;\r\n  background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); /* FF3`6-15 */\r\n  background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */\r\n  background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\r\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */\r\n\r\n  word-spacing: 99999px;\r\n  padding: 10px;\r\n}\r\n\r\n    li {\r\n        text-align: left !important;\r\n    }\r\n\r\n/*title-card h2 {\r\n    max-width: 46%;\r\n    font-size: 12px;\r\n    display: inline-block;\r\n    border-radius: 5px;\r\n  box-sizing: border-box;\r\n  padding: 8px;\r\n  box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;\r\n  text-baseline: top;\r\n\r\n  background-color: blue;\r\n  background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); \r\n  background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); \r\n  background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%);\r\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); \r\n\r\n}*/\r\n\r\n.profileIcon {\r\n    float: left;\r\n    margin-right: 20px;\r\n    margin-top: -10px;\r\n}\r\n\r\n.emailIcon {\r\n    width: 54px;\r\n    height: 31px;\r\n}\r\n\r\n.skillContainer{\r\n    display: flex;\r\n    border-top: 3px inset black;\r\n    padding-top: 4px;\r\n    padding-bottom: 4px;\r\n    cursor: pointer;\r\n}\r\n\r\n.skillDisplay, .levelDisplay {\r\n    flex: 1 0 49%;\r\n}\r\n\r\n\r\nskill-key section.RpgUiBox {\r\n    overflow: hidden !important;\r\n}\r\nskill-key img{\r\n    display: block;\r\n    width: 300px;\r\n    margin: auto;\r\n}\r\n\r\n.nav-cards li{\r\n  display: inline-block;\r\n  border-radius: 5px;\r\n  box-sizing: border-box;\r\n  padding: 8px;\r\n  margin-right: 10px;\r\n  box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;\r\n  text-baseline: top;\r\n\r\n  background-color: blue;\r\n  background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); /* FF3.6-15 */\r\n  background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */\r\n  background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\r\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */\r\n}\r\n\r\n.nav-cards li,\r\n.nav-cards li a, \r\n.nav-cards li a:active, \r\n.nav-cards li a:hover,\r\n.nav-cards li a:visited,\r\n.nav-cards li a:focus\r\n{\r\n    color: rgb(240,240,240);\r\n    cursor: pointer;\r\n}\r\n\r\n.seeking{\r\n    margin: 0;\r\n    padding: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    width: 100%;\r\n}\r\n\r\n.seeking p{\r\n    flex: 1;\r\n    display: block;\r\n    text-shadow: 2px 3px 0px black;\r\n    border-top: 1px solid black;\r\n    text-align: center;\r\n    font-weight: bold;\r\n    width: 100%;\r\n    margin: 0;\r\n    padding: 0;\r\n    padding-top: 5px;\r\n    padding-bottom: 5px;\r\n    color: orange;\r\n}\r\n.seeking p:first-of-type{\r\n    border-top: none;\r\n    padding-top: 0 !important;\r\n\r\n}", ""]);
+	exports.push([module.id, "@font-face {\r\n    font-family: 'BitFont';\r\n    src: url(" + __webpack_require__(529) + ");\r\n}\r\n\r\nhtml, body{\r\n  height: 100%;\r\n  width: 100%;\r\n  margin: 0;\r\n  padding: 0;\r\n  min-height: 100vh;\r\n  min-width: 100vw;\r\n  font-family: \"BitFont\", Arial, Helvetica, sans-serif;\r\n  background-color: black;\r\n}\r\n\r\np, h1, h2, h3, h4, h5, h6 {\r\n    font-family: \"BitFont\", Arial, Helvetica, sans-serif;\r\n}\r\n\r\n.RpgUiBox {\r\n  color: rgb(240,240,240);\r\n\r\n  border-radius: 15px;\r\n  box-sizing: border-box;\r\n  margin: 10px;\r\n  box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;\r\n\r\n  background-color: blue;\r\n  background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); /* FF3.6-15 */\r\n  background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */\r\n  background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\r\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */\r\n  padding: 10px;\r\n  overflow-y: auto;\r\n  overflow-x: hidden;\r\n}\r\n\r\n.RpgUiBox h1, .RpgUiBox h2 {\r\n  text-shadow: 3px 4px 0px black;\r\n  clear: both;\r\n}\r\n\r\n\r\n\r\n.modal{\r\n  z-index: 10;\r\n  position: fixed;\r\n  width: 85%;\r\n  max-height: 95%;\r\n  top: 2.5%;\r\n  left: 12.5%;\r\n  margin: 0px;\r\n  padding: 0px;\r\n\r\n  color: rgb(240,240,240);\r\n\r\n  border-radius: 15px;\r\n  box-sizing: border-box;\r\n  margin: 10px;\r\n  box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;\r\n\r\n  background-color: blue;\r\n  background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); /* FF3.6-15 */\r\n  background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */\r\n  background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\r\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */\r\n  padding: 10px;\r\n  overflow-y: auto;\r\n  overflow-x: hidden;\r\n}\r\n\r\n.modal-body {\r\n    overflow-y: auto;\r\n}\r\n\r\n\r\n\r\n.modal-backdrop{\r\n    background-color: black;\r\n    opacity: 0.5;\r\n    position: fixed;\r\n    z-index: 5;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n.rpg-resume {\r\n    position: absolute;\r\n    box-sizing: border-box;\r\n    height: 100vh;\r\n    min-height: 100vh;\r\n    overflow: hidden;\r\n    margin: 0;\r\n    padding: 0;\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.split-left-vertical {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    margin: 0;\r\n    padding: 0;\r\n    flex-direction: column;\r\n    \r\n    flex: 0 0 66%;\r\n}\r\n\r\n\r\n.top-left {\r\n    width: 100%;\r\n    margin: 0;\r\n    padding: 0;\r\n    flex-direction: row;\r\n    display: flex;\r\n    align-items: stretch;\r\n    -webkit-box-align-content: stretch;\r\n    flex-basis: 66%;\r\n}\r\n\r\n.bottom-left {\r\n    height: 50%;\r\n    flex-basis: 33%;\r\n}\r\n\r\nemployment-cardset {\r\n        display: flex;\r\n        width: 95%;\r\n        height: 80%;\r\n        margin: 0;\r\n        padding: 0;\r\n}\r\n\r\nemployment-card{\r\n    flex: 1 0 1%;\r\n}\r\n\r\n.employment-nav {\r\n    width: 95%;\r\n    height: 95%;\r\n    color: rgb(240,240,240);\r\n\r\n  border-radius: 15px;\r\n  box-sizing: border-box;\r\n  margin: 15px;\r\n  box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;\r\n\r\n  background-color: blue;\r\n  background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); /* FF3.6-15 */\r\n  background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */\r\n  background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\r\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */\r\n\r\n  font-size: large;\r\n}\r\n\r\n.right {\r\n    box-sizing: border-box;\r\n    overflow-y: auto;\r\n    height: 100%;\r\n    display: flex;\r\n    margin: 0;\r\n    padding: 0;\r\n    flex-direction: column;\r\n    \r\n    flex: 0 0 33%;\r\n}\r\n\r\n.right skill-card{\r\n    flex: 5;\r\n}\r\n\r\nbio-card {\r\n    position: relative;\r\n    overflow: hidden !important;\r\n    flex: 2;\r\n}\r\n\r\nbio-card:before {\r\n    content:'';\r\n    width:100%;\r\n    height:100%;    \r\n    position:absolute;\r\n    left:0;\r\n    top:0;\r\n    background:linear-gradient(transparent 45%, #1e5799 85%, transparent 85.1%);\r\n    pointer-events: none;\r\n    margin-left: 3px;\r\n    margin-right: 3px;\r\n}\r\n\r\nbio-card > button {\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 15%;\r\n    bottom: 0;\r\n    left: 0;\r\n    font-family: \"BitFont\", Arial, Helvetica, sans-serif;\r\n    font-size: large;\r\n\r\n    color: rgb(240,240,240);\r\n    border-radius: 10px;\r\n    box-sizing: border-box;\r\n    box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;\r\n\r\n    background-color: blue;\r\n    background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); /* FF3.6-15 */\r\n    background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */\r\n    background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\r\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */\r\n    padding: 5px;\r\n    flex: 1;\r\n        \r\n}\r\n\r\nrpg-modal button {\r\n    width: 100%;\r\n    font-family: \"BitFont\", Arial, Helvetica, sans-serif;\r\n    font-size: large;\r\n\r\n    color: rgb(240,240,240);\r\n    border-radius: 10px;\r\n    box-sizing: border-box;\r\n    margin-top: 20px;\r\n    box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;\r\n\r\n    background-color: blue;\r\n    background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); /* FF3.6-15 */\r\n    background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */\r\n    background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\r\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */\r\n    padding: 5px;\r\n}\r\n\r\ntitle-card {\r\n      flex: 1 0;\r\n      overflow-y: hidden !important;\r\n}\r\n\r\ntitle-card a{\r\n    color: white;\r\n    font-style: none;\r\n}\r\n\r\ntitle-card h1.image-header {\r\n  font-size: 36px;\r\n  border-radius: 15px;\r\n  box-sizing: border-box;\r\n  margin: 10px;\r\n  box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;\r\n\r\n  background-color: blue;\r\n  background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); /* FF3`6-15 */\r\n  background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */\r\n  background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\r\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */\r\n\r\n  word-spacing: 99999px;\r\n  padding: 10px;\r\n}\r\n\r\n    li {\r\n        text-align: left !important;\r\n    }\r\n\r\n/*title-card h2 {\r\n    max-width: 46%;\r\n    font-size: 12px;\r\n    display: inline-block;\r\n    border-radius: 5px;\r\n  box-sizing: border-box;\r\n  padding: 8px;\r\n  box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;\r\n  text-baseline: top;\r\n\r\n  background-color: blue;\r\n  background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); \r\n  background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); \r\n  background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%);\r\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); \r\n\r\n}*/\r\n\r\n.profileIcon {\r\n    float: left;\r\n    margin-right: 20px;\r\n    margin-top: -10px;\r\n}\r\n\r\n.emailIcon {\r\n    width: 54px;\r\n    height: 31px;\r\n}\r\n\r\n.skillContainer{\r\n    display: flex;\r\n    border-top: 3px inset black;\r\n    padding-top: 4px;\r\n    padding-bottom: 4px;\r\n    cursor: pointer;\r\n}\r\n\r\n.skillDisplay, .levelDisplay {\r\n    flex: 1 0 49%;\r\n}\r\n\r\n\r\nskill-key section.RpgUiBox {\r\n    overflow: hidden !important;\r\n}\r\nskill-key img{\r\n    display: block;\r\n    width: 300px;\r\n    margin: auto;\r\n}\r\n\r\n.nav-cards li{\r\n  display: inline-block;\r\n  border-radius: 5px;\r\n  box-sizing: border-box;\r\n  padding: 8px;\r\n  margin-right: 10px;\r\n  box-shadow: 0 0 3px 4px white, 0 0 0 4px black, inset 0 0 3px 4px white, inset 0 0 0 4px black, 2px 2px 2px 0 black;\r\n  text-baseline: top;\r\n\r\n  background-color: blue;\r\n  background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 50%, #1e5799 100%); /* FF3.6-15 */\r\n  background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */\r\n  background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 50%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\r\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */\r\n}\r\n\r\n.nav-cards li,\r\n.nav-cards li a, \r\n.nav-cards li a:active, \r\n.nav-cards li a:hover,\r\n.nav-cards li a:visited,\r\n.nav-cards li a:focus\r\n{\r\n    color: rgb(240,240,240);\r\n    cursor: pointer;\r\n}\r\n\r\n.seeking{\r\n    margin: 0;\r\n    padding: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    width: 100%;\r\n}\r\n\r\n.seeking p{\r\n    flex: 1;\r\n    display: block;\r\n    text-shadow: 2px 3px 0px black;\r\n    border-top: 1px solid black;\r\n    text-align: center;\r\n    font-weight: bold;\r\n    width: 100%;\r\n    margin: 0;\r\n    padding: 0;\r\n    padding-top: 5px;\r\n    padding-bottom: 5px;\r\n    color: orange;\r\n}\r\n.seeking p:first-of-type{\r\n    border-top: none;\r\n    padding-top: 0 !important;\r\n\r\n}", ""]);
 
 	// exports
 
 
 /***/ },
 
-/***/ 527:
+/***/ 528:
 /***/ function(module, exports, __webpack_require__) {
 
 	// css-to-string-loader: transforms styles from css-loader to a string output
 
 	// Get the styles
-	var styles = __webpack_require__(526);
+	var styles = __webpack_require__(527);
 
 	if (typeof styles === 'string') {
 	  // Return an existing string
@@ -838,21 +867,28 @@ webpackJsonpac__name_([2],{
 
 /***/ },
 
-/***/ 528:
+/***/ 529:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "assets/fonts/PixelDigivolve.otf";
 
 /***/ },
 
-/***/ 529:
+/***/ 530:
+/***/ function(module, exports) {
+
+	module.exports = "<section class=\"rpg-resume\">\r\n    <section class=\"split-left-vertical\">\r\n        <section class=\"top-left\">\r\n            <title-card class=\"RpgUiBox\"\r\n                name=\"Hunter Hunnie Thomas\"\r\n                email=\"scrapcupcake@gmail.com\"\r\n                phone=\"503-516-2831\">\r\n                Please use email as the primary countact; phone calls available by appointment\r\n            </title-card>\r\n            <bio-card class=\"RpgUiBox\">\r\n            <p>Hello, I’m Hunter Hunnie Thomas, a transgender/non-binary person. I’m currently homeless and trying to get back to my roots of my working career, retail and website development, to get back on my feet.</p>\r\n\r\n            <p>I’m currently trying to figure out how to get the ergonomics of my disability and computer use to mesh well again, and looking for retail work to fill the time when I can’t be hunched over a laptop to be a good salesperson for stuff I believe in again.</p>\r\n\r\n            <p>And I believe in cannabis. It has been the most effective pain and trauma relief in my life for a long time, and I’m a levelheaded advocate for its proper legal use. If you are interested in hiring a motivated, friendly professional who can grow with your company, I’m your queer!</p>\r\n            </bio-card>\r\n        </section>\r\n        <section class=\"bottom-left RpgUiBox\">\r\n            <employment-cardset>\r\n                <employment-card title=\"Modern Era\">\r\n                    <employment job-title=\"Self Care\"\r\n                    start-date=\"2014 (March)\" end-date=\"Current\" \r\n                    employer=\"Health Recovery/Freelancing\" location=\"Portland, OR and Seattle, WA\">\r\n                    <p>A whole slew of bad luck freelancing and mental health recovery has left me ready to restart my working life, but with just a few resources to do it with.</p>\r\n\r\n                    <p>Ask for the full story in person if you want it :)</p>\r\n                    </employment>\r\n                </employment-card>\r\n\r\n                <employment-card title=\"Startup Era\">\r\n                        <employment job-title=\"Senior QA Automation Consultant\"\r\n                        start-date=\"March 2013\" end-date=\"Feburary 2014\" \r\n                        employer=\"SnapFlow\" location=\"Portland, OR\">\r\n                        <p>Developed a ruby automation framework to test the startup’s extensive REST API, used as a major part of their continuous deployment process alongside their javascript unit tests. Provided QA guidance to two other employees, including full handoff of the framework to my successor.</p>\r\n                        <p>Used the income from this to pay my employees at Fat Cat Gameworks, below.</p>\r\n                        </employment>\r\n                        \r\n                        <employment job-title=\"CEO\"\r\n                        start-date=\"Feburary 2012\" end-date=\"Feburary 2014\" \r\n                        employer=\"Fat Cat GameWorks\" location=\"Portland, OR\">\r\n                        <p>Web application and game developer, general executive do-er. Project manager and business developer for a small, focused game development team, including development of contacts with intellectual property holders and acquisition of intellectual property license agreements. Developing web-based game metric tracking, authentication services, micropayment transaction processing APIs for game software as well as the game’s web presence. Provided C# API client libraries for the highly multi-threaded Unity game engine. Developed game systems and game designs.</p>\r\n                        </employment>\r\n\r\n                        <employment job-title=\"CTO\"\r\n                        start-date=\"August 2011\" end-date=\"Feburary 2012\" \r\n                        employer=\"GuruSignal\" location=\"Portland, OR\">\r\n                        <p>Primary application developer for a technical services/crowdsourced technical support startup consisting of an entirely remote team. Provided project management, website development, and set technical policy. Orchestrated development of new features through TDD and BDD practices, gathered user feedback to improve UX, and integrated graphic designer mock-ups and assets to maximize SEO and decrease page load times. Primary development was done in Ruby and Ruby on Rails, with one component being developed for Android in Java.</p>\r\n                        </employment>\r\n                </employment-card>\r\n\r\n                <employment-card title=\"QA Career Era\">\r\n                        <employment job-title=\"SDET (Software Developer In Test) Level 3\"\r\n                        start-date=\"January 2010\" end-date=\"August 2011\" \r\n                        employer=\"Experis\" location=\"Portland, OR\">\r\n                        <p>QA Team Lead and Test Software Developer. Provided technical experience and insight into testing of web applications to a team of test associates who execute manual tests for a remote client with a testing team in Seattle. Regularly traveled to meet with the client at their Seattle office. Designed and implemented automated testing of web applications using Selenium 2.0/Webdriver, including functional, stress, and load tests and a framework to ease the development of additional tests by junior developers. Configure servers and deploy web applications for testing.</p>\r\n                        <p>Designed and implemented intranet applications for metrics and reporting of ongoing project status, as well as for PC status monitoring and health reporting.</p>\r\n                        </employment>\r\n\r\n                        <employment job-title=\"QA Engineer\"\r\n                        start-date=\"2006\" end-date=\"2010\" \r\n                        employer=\"First Advantage Creditnet\" location=\"Beaverton, OR\">\r\n                        <p>Provided documentation, estimates, work breakdown structures, and team lead duties for teams of one to five QA Engineers for a variety of SDLC models, including waterfall, SCRUM and an amalgam of different agile approaches.</p>\r\n                        <p>Designed and wrote a variety of software automation tools written in C#, including two iterations of a web services automation framework, a web app automation framework using WATIN, and an asynchronous service automation application</p>\r\n                        <p>Provided extensive manual testing of asynchronous processing applications (Windows services), web services, web apps and desktop apps.</p>\r\n                        <p>Wrote and provided QA review and testing of SQL scripts and sprocs.</p>\r\n                        <p>Provided on site and remote training and coordination for offshore (India) QA resources.</p>\r\n                        <p>Provided research and feedback on the impact and level of effort for new engineering items as they are proposed by the business team.</p>\r\n                        <p>Provided web service and 'offline' (ftp batch processing) clients with development support for integration efforts</p>\r\n                        </employment>\r\n                        \r\n                        <employment job-title=\"QA Contractor\"\r\n                        start-date=\"July 2005\" end-date=\"December 2005\" \r\n                        employer=\"A1 Enterprise (Telecommute)\" location=\"Beaverton, OR\">\r\n                        <p>Provided QA testing and documentation on intranet deliverable web application.</p>\r\n                        </employment>\r\n\r\n                        <employment job-title=\"Software Developer & QA Lead\"\r\n                        start-date=\"2003\" end-date=\"2005\" \r\n                        employer=\"Media Rights Technologies\" location=\"Sanat Cruz, CA\">\r\n                        <p>Programming for major internal projects, including definitions and implementations of new modules, maintenance of existing modules, and creation and maintenance of documentation. Projects included web development of client side JavaScript, Perl and PHP on Unix servers, and utility application development on Microsoft Windows in Python and C++.</p>\r\n                        <p>Provided system administration for the development and QA teams, including setup and administration of CVS code repositories, SMB file servers, and internal DNS and DHCP.</p>\r\n                        <p>Coordinated between client and server side programming teams, including documentation of tool use, and resolution of any other inter-department support issues.</p>\r\n                        <p>Lead the QA and software defect testing team, provide technical leadership and in-depth debugging support to facilitate communication with the development teams.</p>\r\n                        <p>Adapted to an ever changing technical startup environment, including expanding responsibilities and working to find new applications of technical skills.</p>\r\n                        </employment>\r\n                </employment-card>\r\n                \r\n                <employment-card title=\"Front Desk & Retail Era\">\r\n                        <employment job-title=\"System Administrator\"\r\n                        start-date=\"2001\" end-date=\"2003\" \r\n                        employer=\"Sasquatch Computer\" location=\"Santa Cruz, CA\">\r\n                        <p>Created and maintained the content management system for the company website, developed with mod_perl and Mason.</p>\r\n                        <p>Provided programming support, debugging, and installation for web hosting customers.</p>\r\n                        <p>Provided technical support to address all customer technical queries and to provide concise, factual information for the system administrators when escalating issues.</p>\r\n                        <p>Created new accounts for users, including system accounts and billing information, added services to existing accounts, and management of password resets in adherence to a strict password policy.</p>\r\n                        <p>Handled all incoming queries, including customer service, advertising, billing and payment requests, via a multi-line phone system, walk-in, and email.  Routed all queries that could not be directly addressed to the appropriate parties. Provided solutions to customer issues, even when the customer was distraught or agitated.</p>\r\n                        <p>Researched technical and cost feasibility for possible new services, with full documentation of findings.</p>\r\n                        <p>Adapted to an ever changing small business environment. Aided in definition of own job description and responsibilities, as well as the expansion of the latter.</p>\r\n                        </employment>\r\n\r\n                        <employment job-title=\"Cash Cage Operator & Print Specialist\"\r\n                        start-date=\"2001\" end-date=\"2002\" \r\n                        employer=\"Sears\" location=\"Santa Cruz, CA\">\r\n                        <p>Was one of two personnel counting and handling the deposits, handed off to armored car, for the entire Sears store, including during the holiday season of 2001. Never had a discrepancy between my deposits, the store’s sales records or the bank’s records.</p>\r\n                        <p>Managed and maintained the large sign printer and posted price signs for the store.</p>\r\n                        <p>Worked this job and Sasquatch Computers (above) concurrently.</p>\r\n                        </employment>\r\n\r\n                        <employment job-title=\"Repair Technician\"\r\n                        start-date=\"2000\" end-date=\"2001\" \r\n                        employer=\"Dave's Computer Service\" location=\"Santa Cruz, CA\">\r\n                        <p>Managed the intake of all manner of hardware for repair, including addition to the queue system and entry into the customer database. Addressed the questions or issues of customers, and found additional information for them.</p>\r\n                        <p>Diagnosed and repaired a variety of computer systems including PCs running Windows 95-ME, NT and 2000, Macintosh Computers running OS 7.5.3-9 and Linux workstations. This includes hardware level, OS level and other software conflicts, hardware issues, as well as networking and general troubleshooting with customers.</p>\r\n                        </employment>\r\n                </employment-card>\r\n                \r\n                <employment-card title=\"Collage Era\">\r\n                    <employment job-title=\"Java Development Contractor\"\r\n                    start-date=\"October 2000\" end-date=\"December 2000\" \r\n                    employer=\"Independent Contractor\" location=\"Santa Cruz, CA\">\r\n                    <p>Aided in the development and debugging of GUI front end code for a Java sound analysis system. Development responsibilities focused on front-end performance and cross-platform debugging.</p>\r\n                    </employment>\r\n                </employment-card>\r\n            </employment-cardset>\r\n        </section>\r\n    </section>\r\n    <section class=\"right\">\r\n    <skill-card class=\"RpgUiBox\" title=\"Primary Professional Qualifications\">\r\n         <skill name=\"Aspiring cannasommelier.\" level=\"2\">\r\n-        Knowledgeable cannabis user with a taste for learning. I will be an advocate for matching each user wi\r\nth the appropriate application of the varied products available, from the wide array of edibles to concentrates\r\n and flower, finding the right strain, sativa, indica or the right hybrid for what a customer needs, as well as\r\n the many methods of inhaling, imbibing, or eating.\r\n-        </skill>\r\n        <skill name=\"A Nerd’s eye for organization.\" level=\"3\">\r\n        My career as a QA professional and software developer, and my profound respect for the libraries and librarians I have relied on all my life, have left me with a deep desire to see everything in its place so everyone can easily find exactly what they need. I will be happy to develop useful and accessible displays and storage both online and off for all your products. For an example of what I’d love to work on, see <a href=\"https://www.youtube.com/watch?v=l9AqYaSRjw0\">Adam Savage’s workshop organization project</a>; that’s the level of ‘right at hand’ I want everyone to have, wherever I work.\r\n        </skill>\r\n        <skill name=\"Helpful and courteous sales person.\" level=\"4\">\r\n        I’ve worked front desk at service businesses and worked the floor in retail previously, and successfully pitched ideas for startup companies to investors. I’ve had experience dealing with irate, frustrated and confused customers, and have been able to come to terms with all of them.\r\n        </skill>\r\n        <skill name=\"Extensive website development skills.\" level=\"4\">\r\n        I’ve been working on websites for twenty years. I’m in the midst of updating my skills to the latest the web has to offer; I’m a skilled angular developer and currently developing (including this site) in Angular 2. I’m happy to put that to work for your store, help you develop a one of a kind website experience for your store.\r\n        </skill>\r\n        <skill name=\"Computer networking expert.\" level=\"4\">\r\n        I can’t fix every computer issue, but I can keep machines talking to each other. If you are looking at expanding your operation to more than one store, I can help. \r\n        </skill>\r\n        <skill name=\"14 Years Quality Assurance Experience\" level=\"5\">\r\n        Development of QA processes in software development startups, redevelopment of QA processes inside multiple corporate environments. Team lead in multiple organizations, including  project management and process documentation as well as technical leadership and training. Extensive experience with work in a heterogeneous web development environment.\r\n        </skill>\r\n        <skill name=\"22 Years Software Development Experience\" level=\"5\">\r\n        Web Development (client and server, javascript and ruby), Test Automation (unit, integration, end-to-end, javascript and ruby), Game Development (Unity, C#). Current focus: Angular2 clients, Node.js/Express.js or servers, Firebase as a backend for rapid prototyping.\r\n        </skill>\r\n    </skill-card>\r\n    <skill-key></skill-key>\r\n    </section>\r\n</section>"
+
+/***/ },
+
+/***/ 531:
 /***/ function(module, exports) {
 
 	module.exports = "<section class=\"rpg-resume\">\r\n    <section class=\"split-left-vertical\">\r\n        <section class=\"top-left\">\r\n            <title-card class=\"RpgUiBox\"\r\n                name=\"Hunter Hunnie Thomas\"\r\n                email=\"scrapcupcake@gmail.com\"\r\n                phone=\"503-516-2831\">\r\n                Please use email as the primary countact; phone calls available by appointment\r\n            </title-card>\r\n            <bio-card class=\"RpgUiBox\">\r\n            <p>Hello, I’m Hunter Hunnie Thomas, a transgender/non-binary person. I’m currently homeless and trying to get back to my roots of my working career, retail and website development, to get back on my feet.</p>\r\n\r\n            <p>I’m currently trying to figure out how to get the ergonomics of my disability and computer use to mesh well again, and looking for retail work to fill the time when I can’t be hunched over a laptop to be a good salesperson for stuff I believe in again.</p>\r\n\r\n            </bio-card>\r\n        </section>\r\n        <section class=\"bottom-left RpgUiBox\">\r\n            <employment-cardset>\r\n                <employment-card title=\"Modern Era\">\r\n                    <employment job-title=\"Self Care\"\r\n                    start-date=\"2014 (March)\" end-date=\"Current\" \r\n                    employer=\"Health Recovery/Freelancing\" location=\"Portland, OR and Seattle, WA\">\r\n                    <p>A whole slew of bad luck freelancing and mental health recovery has left me ready to restart my working life, but with just a few resources to do it with.</p>\r\n\r\n                    <p>Ask for the full story in person if you want it :)</p>\r\n                    </employment>\r\n                </employment-card>\r\n\r\n                <employment-card title=\"Startup Era\">\r\n                        <employment job-title=\"Senior QA Automation Consultant\"\r\n                        start-date=\"March 2013\" end-date=\"Feburary 2014\" \r\n                        employer=\"SnapFlow\" location=\"Portland, OR\">\r\n                        <p>Developed a ruby automation framework to test the startup’s extensive REST API, used as a major part of their continuous deployment process alongside their javascript unit tests. Provided QA guidance to two other employees, including full handoff of the framework to my successor.</p>\r\n                        <p>Used the income from this to pay my employees at Fat Cat Gameworks, below.</p>\r\n                        </employment>\r\n                        \r\n                        <employment job-title=\"CEO\"\r\n                        start-date=\"Feburary 2012\" end-date=\"Feburary 2014\" \r\n                        employer=\"Fat Cat GameWorks\" location=\"Portland, OR\">\r\n                        <p>Web application and game developer, general executive do-er. Project manager and business developer for a small, focused game development team, including development of contacts with intellectual property holders and acquisition of intellectual property license agreements. Developing web-based game metric tracking, authentication services, micropayment transaction processing APIs for game software as well as the game’s web presence. Provided C# API client libraries for the highly multi-threaded Unity game engine. Developed game systems and game designs.</p>\r\n                        </employment>\r\n\r\n                        <employment job-title=\"CTO\"\r\n                        start-date=\"August 2011\" end-date=\"Feburary 2012\" \r\n                        employer=\"GuruSignal\" location=\"Portland, OR\">\r\n                        <p>Primary application developer for a technical services/crowdsourced technical support startup consisting of an entirely remote team. Provided project management, website development, and set technical policy. Orchestrated development of new features through TDD and BDD practices, gathered user feedback to improve UX, and integrated graphic designer mock-ups and assets to maximize SEO and decrease page load times. Primary development was done in Ruby and Ruby on Rails, with one component being developed for Android in Java.</p>\r\n                        </employment>\r\n                </employment-card>\r\n\r\n                <employment-card title=\"QA Career Era\">\r\n                        <employment job-title=\"SDET (Software Developer In Test) Level 3\"\r\n                        start-date=\"January 2010\" end-date=\"August 2011\" \r\n                        employer=\"Experis\" location=\"Portland, OR\">\r\n                        <p>QA Team Lead and Test Software Developer. Provided technical experience and insight into testing of web applications to a team of test associates who execute manual tests for a remote client with a testing team in Seattle. Regularly traveled to meet with the client at their Seattle office. Designed and implemented automated testing of web applications using Selenium 2.0/Webdriver, including functional, stress, and load tests and a framework to ease the development of additional tests by junior developers. Configure servers and deploy web applications for testing.</p>\r\n                        <p>Designed and implemented intranet applications for metrics and reporting of ongoing project status, as well as for PC status monitoring and health reporting.</p>\r\n                        </employment>\r\n\r\n                        <employment job-title=\"QA Engineer\"\r\n                        start-date=\"2006\" end-date=\"2010\" \r\n                        employer=\"First Advantage Creditnet\" location=\"Beaverton, OR\">\r\n                        <p>Provided documentation, estimates, work breakdown structures, and team lead duties for teams of one to five QA Engineers for a variety of SDLC models, including waterfall, SCRUM and an amalgam of different agile approaches.</p>\r\n                        <p>Designed and wrote a variety of software automation tools written in C#, including two iterations of a web services automation framework, a web app automation framework using WATIN, and an asynchronous service automation application</p>\r\n                        <p>Provided extensive manual testing of asynchronous processing applications (Windows services), web services, web apps and desktop apps.</p>\r\n                        <p>Wrote and provided QA review and testing of SQL scripts and sprocs.</p>\r\n                        <p>Provided on site and remote training and coordination for offshore (India) QA resources.</p>\r\n                        <p>Provided research and feedback on the impact and level of effort for new engineering items as they are proposed by the business team.</p>\r\n                        <p>Provided web service and 'offline' (ftp batch processing) clients with development support for integration efforts</p>\r\n                        </employment>\r\n                        \r\n                        <employment job-title=\"QA Contractor\"\r\n                        start-date=\"July 2005\" end-date=\"December 2005\" \r\n                        employer=\"A1 Enterprise (Telecommute)\" location=\"Beaverton, OR\">\r\n                        <p>Provided QA testing and documentation on intranet deliverable web application.</p>\r\n                        </employment>\r\n\r\n                        <employment job-title=\"Software Developer & QA Lead\"\r\n                        start-date=\"2003\" end-date=\"2005\" \r\n                        employer=\"Media Rights Technologies\" location=\"Sanat Cruz, CA\">\r\n                        <p>Programming for major internal projects, including definitions and implementations of new modules, maintenance of existing modules, and creation and maintenance of documentation. Projects included web development of client side JavaScript, Perl and PHP on Unix servers, and utility application development on Microsoft Windows in Python and C++.</p>\r\n                        <p>Provided system administration for the development and QA teams, including setup and administration of CVS code repositories, SMB file servers, and internal DNS and DHCP.</p>\r\n                        <p>Coordinated between client and server side programming teams, including documentation of tool use, and resolution of any other inter-department support issues.</p>\r\n                        <p>Lead the QA and software defect testing team, provide technical leadership and in-depth debugging support to facilitate communication with the development teams.</p>\r\n                        <p>Adapted to an ever changing technical startup environment, including expanding responsibilities and working to find new applications of technical skills.</p>\r\n                        </employment>\r\n                </employment-card>\r\n                \r\n                <employment-card title=\"Front Desk & Retail Era\">\r\n                        <employment job-title=\"System Administrator\"\r\n                        start-date=\"2001\" end-date=\"2003\" \r\n                        employer=\"Sasquatch Computer\" location=\"Santa Cruz, CA\">\r\n                        <p>Created and maintained the content management system for the company website, developed with mod_perl and Mason.</p>\r\n                        <p>Provided programming support, debugging, and installation for web hosting customers.</p>\r\n                        <p>Provided technical support to address all customer technical queries and to provide concise, factual information for the system administrators when escalating issues.</p>\r\n                        <p>Created new accounts for users, including system accounts and billing information, added services to existing accounts, and management of password resets in adherence to a strict password policy.</p>\r\n                        <p>Handled all incoming queries, including customer service, advertising, billing and payment requests, via a multi-line phone system, walk-in, and email.  Routed all queries that could not be directly addressed to the appropriate parties. Provided solutions to customer issues, even when the customer was distraught or agitated.</p>\r\n                        <p>Researched technical and cost feasibility for possible new services, with full documentation of findings.</p>\r\n                        <p>Adapted to an ever changing small business environment. Aided in definition of own job description and responsibilities, as well as the expansion of the latter.</p>\r\n                        </employment>\r\n\r\n                        <employment job-title=\"Cash Cage Operator & Print Specialist\"\r\n                        start-date=\"2001\" end-date=\"2002\" \r\n                        employer=\"Sears\" location=\"Santa Cruz, CA\">\r\n                        <p>Was one of two personnel counting and handling the deposits, handed off to armored car, for the entire Sears store, including during the holiday season of 2001. Never had a discrepancy between my deposits, the store’s sales records or the bank’s records.</p>\r\n                        <p>Managed and maintained the large sign printer and posted price signs for the store.</p>\r\n                        <p>Worked this job and Sasquatch Computers (above) concurrently.</p>\r\n                        </employment>\r\n\r\n                        <employment job-title=\"Repair Technician\"\r\n                        start-date=\"2000\" end-date=\"2001\" \r\n                        employer=\"Dave's Computer Service\" location=\"Santa Cruz, CA\">\r\n                        <p>Managed the intake of all manner of hardware for repair, including addition to the queue system and entry into the customer database. Addressed the questions or issues of customers, and found additional information for them.</p>\r\n                        <p>Diagnosed and repaired a variety of computer systems including PCs running Windows 95-ME, NT and 2000, Macintosh Computers running OS 7.5.3-9 and Linux workstations. This includes hardware level, OS level and other software conflicts, hardware issues, as well as networking and general troubleshooting with customers.</p>\r\n                        </employment>\r\n                </employment-card>\r\n                \r\n                <employment-card title=\"Collage Era\">\r\n                    <employment job-title=\"Java Development Contractor\"\r\n                    start-date=\"October 2000\" end-date=\"December 2000\" \r\n                    employer=\"Independent Contractor\" location=\"Santa Cruz, CA\">\r\n                    <p>Aided in the development and debugging of GUI front end code for a Java sound analysis system. Development responsibilities focused on front-end performance and cross-platform debugging.</p>\r\n                    </employment>\r\n                </employment-card>\r\n            </employment-cardset>\r\n        </section>\r\n    </section>\r\n    <section class=\"right\">\r\n    <skill-card class=\"RpgUiBox\" title=\"Primary Professional Qualifications\">\r\n        <skill name=\"A Nerd’s eye for organization.\" level=\"3\">\r\n        My career as a QA professional and software developer, and my profound respect for the libraries and librarians I have relied on all my life, have left me with a deep desire to see everything in its place so everyone can easily find exactly what they need. I will be happy to develop useful and accessible displays and storage both online and off for all your products. For an example of what I’d love to work on, see <a href=\"https://www.youtube.com/watch?v=l9AqYaSRjw0\">Adam Savage’s workshop organization project</a>; that’s the level of ‘right at hand’ I want everyone to have, wherever I work.\r\n        </skill>\r\n        <skill name=\"Helpful and courteous sales person.\" level=\"4\">\r\n        I’ve worked front desk at service businesses and worked the floor in retail previously, and successfully pitched ideas for startup companies to investors. I’ve had experience dealing with irate, frustrated and confused customers, and have been able to come to terms with all of them.\r\n        </skill>\r\n        <skill name=\"Extensive website development skills.\" level=\"4\">\r\n        I’ve been working on websites for twenty years. I’m in the midst of updating my skills to the latest the web has to offer; I’m a skilled angular developer and currently developing (including this site) in Angular 2. I’m happy to put that to work for your store, help you develop a one of a kind website experience for your store.\r\n        </skill>\r\n        <skill name=\"Computer networking expert.\" level=\"4\">\r\n        I can’t fix every computer issue, but I can keep machines talking to each other. If you are looking at expanding your operation to more than one store, I can help. \r\n        </skill>\r\n        <skill name=\"14 Years Quality Assurance Experience\" level=\"5\">\r\n        Development of QA processes in software development startups, redevelopment of QA processes inside multiple corporate environments. Team lead in multiple organizations, including  project management and process documentation as well as technical leadership and training. Extensive experience with work in a heterogeneous web development environment.\r\n        </skill>\r\n        <skill name=\"22 Years Software Development Experience\" level=\"5\">\r\n        Web Development (client and server, javascript and ruby), Test Automation (unit, integration, end-to-end, javascript and ruby), Game Development (Unity, C#). Current focus: Angular2 clients, Node.js/Express.js or servers, Firebase as a backend for rapid prototyping.\r\n        </skill>\r\n    </skill-card>\r\n    <skill-key></skill-key>\r\n    </section>\r\n</section>"
 
 /***/ },
 
-/***/ 729:
+/***/ 731:
 /***/ function(module, exports) {
 
 	/*
