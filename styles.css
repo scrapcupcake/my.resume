@@ -51,7 +51,7 @@ header::after {
     font-family: 'BrimbAlt';
     font-size: 2em;
 
-    background-image: url('/images/HeaderCenter.png'),url('/images/HeaderSide.png'),url('/images/HeaderSide.png');
+    background-image: url('images/HeaderCenter.png'),url('images/HeaderSide.png'),url('images/HeaderSide.png');
     background-position: center, center left, center right;
     background-size: 100% 17px, 5px 17px, 5px 17px;    
     background-repeat: repeat-x, no-repeat, no-repeat;
@@ -63,7 +63,7 @@ header::after {
 .TripleBorder{
     border-style: solid;
     border-width: 10px;
-    border-image: url(/images/TripleBorder.png)11 repeat;
+    border-image: url(images/TripleBorder.png)11 repeat;
     margin: 15px;
     padding: 10px;
     margin-top: 35px;
@@ -148,7 +148,7 @@ header::after {
     position: relative;
     right: -85%;
     top:-35px;
-    background-image: url('/images/LevelCircle.png');
+    background-image: url('images/LevelCircle.png');
     height: 90px;
     width:90px;
     box-sizing: border-box;
