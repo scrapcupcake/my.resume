@@ -1,60 +1,115 @@
-<!DOCTYPE html>
-<html lang="">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Hunter Hunnie's Resume</title>
-
-  <meta name="description" content="Hunter Hunnie's Resume">
-
-  
-  <!-- Configured Head Tags  -->
-  <link rel="apple-touch-icon" sizes="57x57" href="/my.resume/assets/icon/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/my.resume/assets/icon/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/my.resume/assets/icon/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/my.resume/assets/icon/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/my.resume/assets/icon/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/my.resume/assets/icon/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/my.resume/assets/icon/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/my.resume/assets/icon/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/my.resume/assets/icon/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="/my.resume/assets/icon/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/my.resume/assets/icon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="/my.resume/assets/icon/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/my.resume/assets/icon/favicon-16x16.png">
-	<link rel="manifest" href="/my.resume/assets/manifest.json">
-	<meta name="msapplication-TileColor" content="#00bcd4">
-	<meta name="msapplication-TileImage" content="/my.resume/assets/icon/ms-icon-144x144.png">
-	<meta name="theme-color" content="#00bcd4">
-  
-
-  <!-- base url -->
-  <base href="/my.resume/">
-
-
+<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-
 <body>
+<section class="Main">
+    <section class="Left FlexColumn FlexBetween">
+        <section class="Name TripleBorder"><!- Name ->
+            <header class="FirstName">Hunter Hunnie</header> 
+            <header class="LastName">Thomas</header>
+        </section>
+        <section class="TripleBorder Portrait"><!- Portrait ->
+            <div class="Level">
+                <h3>level</h3>
+                <h1>35</h1>
+            </div> 
+            <div class="JobTitles">
+                <h1>Programmer</h1>
+                <h2>UX Designer</h2>
+                <h2>Game Designer</h2>
+                <h2>Troubleshooter</h2>
+            </div>
+            <img src="images/hunter.png">
+        </section>
+        <section class="Contact">
+            <h1>scrapcupcake@gmail.com</h1>
+            <h1>503-516-2831</h1>
+            <h2>http://scrapcupcake.github.io/my.resume</h2>
+        </section>
+        <section class="Icons"><!- Software ->
+            <header class="BigHeader">Software</header>
+            <div class="FlexAround">
+                <img src='images/icons/React.png' alt="React">
+                <img src='images/icons/RubyRails.png' alt="Ruby on Rails">
+                <img src='images/icons/VisualStudio.png' alt="Visual Studio">
+                <img src='images/icons/Gimp.png' alt="Gimp">
+            </div>
+            <div class="FlexAround">
+                <img src='images/icons/NodeJS.png' alt="Node JS">
+                <img src='images/icons/Angular.png' alt="Angular">
+                <img src='images/icons/Unity.png' alt="Unity">
+                <img src='images/icons/Blender.png' alt="Blender">
+            </div>
+       </section>
+    </section>
+    <section class="Center FlexColumn"><!- Skills ->
+        <header class="BigHeader">Skills</header>
+        <ul class="TripleBorder FlexColumn FlexBetween FullHeight">
+            <li>+5 &emsp; Web Development</li>
+            <li>+5 &emsp; HTML/CSS</li>
+            <li>+5 &emsp; UI/UX Design</li>
+            <li>+5 &emsp; Game Design</li>
+            <li>+4 &emsp; Game Development</li>
+            <li>+5 &emsp; Project Management</li>
+            <li>+5 &emsp; Quality Assurance</li>
+            <li>+5 &emsp; QA Automation</li>
+            <li>+5 &emsp; Computer Networking</li>
+            <li>+5 &emsp; Systems Analysis</li>
+            <li>+5 &emsp; Organization</li>
+            <li>+4 &emsp; Documentation</li>
+            <li>+4 &emsp; Research</li>
+            <li>+3 &emsp; Miniature Painting</li>
+            <li>+4 &emsp; Copywriting / Editing</li>
+            <li>+5 &emsp; Data Entry</li>
+            <li>+5 &emsp; Word Processing</li>
+            <li>+5 &emsp; Customer Service</li>
+        </ul>
+    </section>
+    <section class="Right FlexColumn History"><!- History ->
+        <header class="BigHeader">History</header>
+        <div class="FlexColumn FlexBetween">
+            <div class="TripleBorder">
+                <header>Modern Era</header>
+                <div class="FlexBetween FullBox"><h2>Self Care</h2><h2>2014 - Present</h2></div>
+            </div>
+            
+            <div class="TripleBorder">
+                <header>Start-Up Era</header>
+                <h2>Senior QA Automation Consultant</h2>
+                    <div class="FlexBetween Indent"><div>Snapflow</div><div>2013 - 2014</div></div>
+                <h2>CTO</h2>
+                    <div class="FlexBetween Indent"><div>Fat Cat Gameworks</div><div>2012 - 2014</div></div>
+                <h2>CEO</h2>
+                    <div class="FlexBetween Indent"><div>Guru Signal</div><div>2010 - 2011</div></div>    
+            </div>
 
-  <app>
-    Loading...
-  </app>
+            <div class="TripleBorder">
+                <header>QA Career Era</header>
+                <h2>SDET Level 3</h2>
+                    <div class="FlexBetween Indent"><div>Experis</div><div>2010 - 2011</div></div>
+                <h2>QA Engineer</h2>
+                    <div class="FlexBetween Indent"><div>First Advantage Creditnet</div><div>2006 - 2010</div></div>
+                    <div class="FlexBetween Indent"><div>A1 Enterprises</div><div>2005</div></div>
+                <h2>Software Developer & QA Lead</h2>
+                    <div class="FlexBetween Indent"><div>Media Rights Technologies</div><div>2003 - 2005</div></div>
+            </div>
 
-  <!-- Google Analytics: change UA-71073175-1 to be your site's ID -->
-  <script>/*
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            <div class="TripleBorder">
+                <header>Front Desk & Retail Era</header>
+                <h2>System Administrator</h2>
+                    <div class="FlexBetween Indent"><div>Sasquatch Computer</div><div>2001 - 2003</div></div>
+                <h2>Cash Cage Operator & Print Specialist</h2>
+                    <div class="FlexBetween Indent"><div>Sears</div><div>2001 - 2002</div></div>
+                <h2>Repair Technician</h2>
+                    <div class="FlexBetween Indent"><div>Dave's Computer Service</div><div>2000 - 2001</div></div>
+            </div>
 
-    ga('create', 'UA-71073175-1', 'auto');
-    ga('send', 'pageview');*/
-  </script>
+            <div class="TripleBorder">
+                <header>College Era</header>
+                <div class="FlexBetween FullBox"><h2>Java Development Contractor</h2><h2>2000</h2></div>
+            </div>
 
-  
-
-
-<script type="text/javascript" src="/my.resume/polyfills.bundle.js"></script><script type="text/javascript" src="/my.resume/vendor.bundle.js"></script><script type="text/javascript" src="/my.resume/main.bundle.js"></script></body>
-</html>
+        </div>
+    </section>
+</section>
+</body>
