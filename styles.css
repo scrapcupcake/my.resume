@@ -1,0 +1,279 @@
+@import 'https://fonts.googleapis.com/css?family=Slabo+27px';
+
+@font-face {
+   font-family: 'Brimb';
+   src: url(BRIMRG_.TTF);
+}
+@font-face {
+   font-family: 'BrimbAlt';
+   src: url(BRIMARG.TTF);
+}
+:root{
+    --Light:#dec8a1;
+    --Medium:#c7a37e;
+}
+
+.main{
+    min-height:100%;
+    width:100%;
+    box-sizing: border-box;
+    padding:20px;
+    box-sizing: border-box;
+    font-family: 'Slabo 27px';
+    background-color:var(--Light);
+    border-radius: 50px;
+    border: black double 10px;
+    box-shadow: 0px 0px 0px 5px black;
+    display: flex;
+}
+
+header{
+    margin-top:-1.8em;
+    margin-left:.5em;
+    margin-bottom: 0;
+    font-size: 1.2em;
+    font-family: 'Brimb';
+}
+
+header::first-line{
+    background-color: var(--Light);
+}
+header::before {
+    content: '';
+    padding: 0 2px;
+}
+header::after {
+    content: '';
+    padding: 0 2px;
+}
+
+.BigHeader{
+    font-family: 'BrimbAlt';
+    font-size: 2em;
+
+    background-image: url('images/HeaderCenter.png'),url('images/HeaderSide.png'),url('images/HeaderSide.png');
+    background-position: center, center left, center right;
+    background-size: 100% 17px, 5px 17px, 5px 17px;    
+    background-repeat: repeat-x, no-repeat, no-repeat;
+    box-sizing: border-box;
+    margin: 0 2% 0 4%;
+    padding: 0 17px;
+}
+
+.TripleBorder{
+    border-style: solid;
+    border-width: 10px;
+    border-image: url(images/TripleBorder.png)11 repeat;
+    margin: 15px;
+    padding: 10px;
+}
+
+.FlexColumn{
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.FlexBetween{
+    display: flex;
+    justify-content: space-between;
+}
+.FlexAround{
+    display: flex;
+    justify-content: space-around;
+}
+
+/*Left Section*/
+.Left{
+    flex:4.5;
+}
+    /*Name*/
+.Name{
+    height:50px;
+    padding: 0;
+    margin-bottom: 2.5em;
+}
+.Name Header{
+    font-size: 2.6em;
+    font-family: 'BrimbAlt';
+}
+.FirstName{
+    margin-top:-1em;
+    margin-left:.5em;
+}
+.LastName{
+    margin-top:-.4em;
+    margin-left:5em;
+}
+    /*Portrait*/
+.Portrait{
+    padding: 0 !important;
+    margin: 0 auto;
+}
+.Portrait img{
+    position: relative;
+    top:0;
+    left:0;
+}
+
+.JobTitles{
+    position: relative;
+    left: 50%;
+    width: 50%;
+    z-index: 1;
+    top: 4em;
+    margin-bottom: -11.2em;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.JobTitles h1{
+    border-radius: 20px 0 0 20px;
+    background: black;
+    color: var(--Light);
+    padding: 5px 10px;
+    box-sizing: border-box;
+    font-size: 2em;
+    margin: 5px 0;
+}
+.JobTitles h2{
+    border-radius: 15px 0 0 15px;
+    background: black;
+    color: var(--Light);
+    padding:  5px 10px;
+    box-sizing: border-box;
+    font-size: 1.3em;
+    margin: 5px 0;
+}
+.Level{
+    position: relative;
+    right: -85%;
+    top:-35px;
+    background-image: url('images/LevelCircle.png');
+    height: 90px;
+    width:90px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: -90px;
+    z-index: 10;
+}
+.Level h1{
+    font-size: 2.5em;
+    margin: 0;
+}
+.Level h3{
+    margin:15px 0 -10px;
+}
+    /*Contact*/
+.Contact{
+    text-align: center;
+    margin:0;
+}
+.Contact h1{
+    font-size: 2em;
+    margin:0;
+}
+.Contact h2{
+    margin:0;
+}
+    /*Software*/
+.Icons img{
+    margin: 15px 0;
+}
+
+
+/* Center Section */
+.Center{
+    flex:3;
+}
+ul{
+    list-style-type: none;
+    padding-left:0;
+    font-weight: bold;
+    font-size: 1.4em;   
+}
+li{
+    padding: 0 10px;
+    line-height: 1.6em;
+    margin: -10px;
+}
+li:nth-child(even) {
+    background-color: var(--Light);
+}
+li:nth-child(odd) {
+    background-color: var(--Medium);
+}
+.FullHeight{
+    height:86%;
+    margin: 0 15px;
+}
+
+/*Right Section*/
+.Right{
+    flex:5;
+}
+
+.History h2{
+    background-color: var(--Medium);
+    font-size: 1.1em;
+    margin:0 -10px;
+    padding:2px 15px;
+}
+.FullLine{
+    background-color: var(--Medium);
+}
+.FullBox{
+    background-color: var(--Medium);
+    margin-bottom:-10px;
+    
+}
+.FullBox h2{
+    padding-bottom:5px;
+}
+
+.Indent{
+    padding-left:1.5em;
+    box-sizing: border-box;
+}
+@media screen and (max-width:1500px){
+    ul{
+        font-size:1.2em;
+    }
+}
+@media screen and (max-width:1300px){
+    ul{
+        font-size:1em;
+    }
+}
+
+@media screen and (max-width:1200px){
+    .main{
+        flex-direction: column;
+        font-size: 1.4em;
+    }
+    .Left{
+        flex:1;
+        display:block;
+
+    }
+    .Right{
+        flex:1;
+    }
+    .Center{
+        flex:1;
+    }
+    
+    .Name{
+        margin-top: 1.8em;
+        margin-bottom: 4em;
+    }
+    .Portrait{
+        width:422px;
+        height:345px;
+         font-size:.72em;
+    }
+
+    .BigHeader{
+        margin-top: .2em;
+        margin-bottom: .4em;
+    }
+}
