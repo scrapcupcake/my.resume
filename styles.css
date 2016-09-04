@@ -16,8 +16,10 @@
 }
 
 a {
-    color: var(--Light);
+    color: black;
 }
+
+
 
 .main{
     min-height:100%;
@@ -241,6 +243,19 @@ li:nth-child(odd) {
     padding-left:1.5em;
     box-sizing: border-box;
 }
+
+@media screen {
+    a.pageUrl{
+        display: none;
+    }
+}
+
+@media print {
+    a.pageUrl{
+        display: block;
+    }
+}
+
 @media screen and (max-width:1500px){
     ul{
         font-size:1.2em;
