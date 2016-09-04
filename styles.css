@@ -15,6 +15,10 @@
     --Medium:#c7a37e;
 }
 
+a {
+    color: var(--Light);
+}
+
 .main{
     min-height:100%;
     width:100%;
